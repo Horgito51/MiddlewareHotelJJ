@@ -1,0 +1,2434 @@
+[
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Alojamiento.AlojamientoIntegrationController",
+    "Method": "GetDetail",
+    "RelativePath": "api/v1/accommodations/{sucursalGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "fechaEntrada",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaSalida",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Alojamiento.AlojamientoDetailDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Alojamiento.AlojamientoIntegrationController",
+    "Method": "GetReviews",
+    "RelativePath": "api/v1/accommodations/{sucursalGuid}/reviews",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limite",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Alojamiento.PagedAlojamientoDTO\u00601[[HotelJJ.Business.DTOs.Alojamiento.AlojamientoReviewDTO, HotelJJ.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Reservas.ReservasIntegrationController",
+    "Method": "Create",
+    "RelativePath": "api/v1/accommodations/reservas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.CreateReservationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Reservas.ReservasIntegrationController",
+    "Method": "GetByGuid",
+    "RelativePath": "api/v1/accommodations/reservas/{reservaGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Alojamiento.AlojamientoIntegrationController",
+    "Method": "Search",
+    "RelativePath": "api/v1/accommodations/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Destino",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FechaEntrada",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "FechaSalida",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumAdultos",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumNinos",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumHabitaciones",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TipoAlojamiento",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PrecioMin",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PrecioMax",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoriaViaje",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrdenarPor",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Limite",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Alojamiento.PagedAlojamientoDTO\u00601[[HotelJJ.Business.DTOs.Alojamiento.AlojamientoSearchItemDTO, HotelJJ.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Alojamiento.AlojamientoIntegrationController",
+    "Method": "GetHabitaciones",
+    "RelativePath": "api/v1/accommodations/sucursales/{sucursalGuid}/habitaciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "tipoHabitacionGuid",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaInicio",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaFin",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[HotelJJ.Business.DTOs.Alojamiento.AlojamientoHabitacionDTO, HotelJJ.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "CambiarPassword",
+    "RelativePath": "api/v1/auth/cambiar-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.CambiarPasswordIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "Login",
+    "RelativePath": "api/v1/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.LoginIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.API.Models.Responses.Auth.LoginIntegrationResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "Logout",
+    "RelativePath": "api/v1/auth/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.LogoutIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "Refresh",
+    "RelativePath": "api/v1/auth/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.RefreshTokenIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.API.Models.Responses.Auth.LoginIntegrationResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "RegisterCliente",
+    "RelativePath": "api/v1/auth/register-cliente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.RegisterClienteIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.API.Models.Responses.Auth.LoginIntegrationResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetAuditoria",
+    "RelativePath": "api/v1/internal/auditoria",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetAuditoriaByGuid",
+    "RelativePath": "api/v1/internal/auditoria/{auditoriaGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "auditoriaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "CambiarPassword",
+    "RelativePath": "api/v1/internal/auth/cambiar-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.CambiarPasswordIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "Login",
+    "RelativePath": "api/v1/internal/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.LoginIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.API.Models.Responses.Auth.LoginIntegrationResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "Logout",
+    "RelativePath": "api/v1/internal/auth/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.LogoutIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "Refresh",
+    "RelativePath": "api/v1/internal/auth/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.RefreshTokenIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.API.Models.Responses.Auth.LoginIntegrationResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Auth.AuthIntegrationController",
+    "Method": "RegisterCliente",
+    "RelativePath": "api/v1/internal/auth/register-cliente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Auth.RegisterClienteIntegrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.API.Models.Responses.Auth.LoginIntegrationResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.HospedajeGatewayController",
+    "Method": "AnularCargoEstadia",
+    "RelativePath": "api/v1/internal/cargos-estadia/{id}/anular",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetCatalogoServicios",
+    "RelativePath": "api/v1/internal/catalogo-servicios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "CreateCatalogoServicio",
+    "RelativePath": "api/v1/internal/catalogo-servicios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetCatalogoServicioById",
+    "RelativePath": "api/v1/internal/catalogo-servicios/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "UpdateCatalogoServicioById",
+    "RelativePath": "api/v1/internal/catalogo-servicios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "DeleteCatalogoServicioById",
+    "RelativePath": "api/v1/internal/catalogo-servicios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "GetInternalClientes",
+    "RelativePath": "api/v1/internal/clientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "CreateInternalCliente",
+    "RelativePath": "api/v1/internal/clientes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "GetInternalClienteById",
+    "RelativePath": "api/v1/internal/clientes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "UpdateInternalCliente",
+    "RelativePath": "api/v1/internal/clientes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "DeleteInternalCliente",
+    "RelativePath": "api/v1/internal/clientes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.HospedajeGatewayController",
+    "Method": "GetEstadias",
+    "RelativePath": "api/v1/internal/estadias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.HospedajeGatewayController",
+    "Method": "GetEstadiaById",
+    "RelativePath": "api/v1/internal/estadias/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.HospedajeGatewayController",
+    "Method": "GetCargosEstadia",
+    "RelativePath": "api/v1/internal/estadias/{id}/cargos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.HospedajeGatewayController",
+    "Method": "AddCargoEstadia",
+    "RelativePath": "api/v1/internal/estadias/{id}/cargos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Hospedaje.CargoHospedajeCreateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.HospedajeGatewayController",
+    "Method": "CheckOut",
+    "RelativePath": "api/v1/internal/estadias/{id}/checkout",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Hospedaje.CheckOutHospedajeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.HospedajeGatewayController",
+    "Method": "CheckIn",
+    "RelativePath": "api/v1/internal/estadias/checkin/{id_reserva}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_reserva",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "GetFacturas",
+    "RelativePath": "api/v1/internal/facturas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Facturacion.FacturacionIntegrationController",
+    "Method": "GetFactura",
+    "RelativePath": "api/v1/internal/facturas/{facturaGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "facturaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Facturacion.FacturaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Facturacion.FacturacionIntegrationController",
+    "Method": "GetSaldo",
+    "RelativePath": "api/v1/internal/facturas/{facturaGuid}/saldo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "facturaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Facturacion.FacturaSaldoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "GetFacturaById",
+    "RelativePath": "api/v1/internal/facturas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "AnularFactura",
+    "RelativePath": "api/v1/internal/facturas/{id}/anular",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Facturacion.AnularFacturaRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "GenerarFacturaFinal",
+    "RelativePath": "api/v1/internal/facturas/generar-final/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Facturacion.FacturacionIntegrationController",
+    "Method": "GenerarFacturaFinal",
+    "RelativePath": "api/v1/internal/facturas/generar-final/{reservaGuid}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Facturacion.FacturaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "GenerarFacturaReserva",
+    "RelativePath": "api/v1/internal/facturas/generar-reserva/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Facturacion.FacturacionIntegrationController",
+    "Method": "GenerarFacturaReserva",
+    "RelativePath": "api/v1/internal/facturas/generar-reserva/{reservaGuid}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Facturacion.FacturaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Flujos.IntegratedFlowController",
+    "Method": "CreateBooking",
+    "RelativePath": "api/v1/internal/flujos/booking/reservas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Flujos.IntegratedBookingCreateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Flujos.IntegratedBookingResultDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Flujos.IntegratedFlowController",
+    "Method": "PayBooking",
+    "RelativePath": "api/v1/internal/flujos/booking/reservas/{reservaGuid}/pagar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Flujos.IntegratedPaymentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Flujos.IntegratedBookingResultDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Flujos.IntegratedFlowController",
+    "Method": "CheckIn",
+    "RelativePath": "api/v1/internal/flujos/operacion/check-in/{reservaGuid}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Flujos.IntegratedCheckInResultDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Flujos.IntegratedFlowController",
+    "Method": "CheckOut",
+    "RelativePath": "api/v1/internal/flujos/operacion/check-out/{estadiaGuid}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estadiaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Flujos.IntegratedCheckOutRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Flujos.IntegratedCheckOutResultDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetHabitaciones",
+    "RelativePath": "api/v1/internal/habitaciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "CreateHabitacion",
+    "RelativePath": "api/v1/internal/habitaciones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetHabitacionByGuid",
+    "RelativePath": "api/v1/internal/habitaciones/{habitacionGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "habitacionGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetHabitacionById",
+    "RelativePath": "api/v1/internal/habitaciones/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "UpdateHabitacionById",
+    "RelativePath": "api/v1/internal/habitaciones/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "DeleteHabitacionById",
+    "RelativePath": "api/v1/internal/habitaciones/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "ChangeHabitacionEstado",
+    "RelativePath": "api/v1/internal/habitaciones/{id}/estado",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Hospedaje.HospedajeIntegrationController",
+    "Method": "AddCargo",
+    "RelativePath": "api/v1/internal/hospedaje/{estadiaGuid}/cargos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estadiaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Hospedaje.CargoHospedajeCreateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Hospedaje.CargoEstadiaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Hospedaje.HospedajeIntegrationController",
+    "Method": "CheckOut",
+    "RelativePath": "api/v1/internal/hospedaje/{estadiaGuid}/check-out",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estadiaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Hospedaje.CheckOutHospedajeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Hospedaje.HospedajeIntegrationController",
+    "Method": "AnularCargo",
+    "RelativePath": "api/v1/internal/hospedaje/cargos/{cargoGuid}/anular",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cargoGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Hospedaje.HospedajeIntegrationController",
+    "Method": "CheckIn",
+    "RelativePath": "api/v1/internal/hospedaje/check-in/{reservaGuid}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Hospedaje.EstadiaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Hospedaje.HospedajeIntegrationController",
+    "Method": "GetByGuid",
+    "RelativePath": "api/v1/internal/hospedaje/estadias/{estadiaGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estadiaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Hospedaje.EstadiaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "GetPagos",
+    "RelativePath": "api/v1/internal/pagos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Facturacion.FacturacionIntegrationController",
+    "Method": "RegistrarPago",
+    "RelativePath": "api/v1/internal/pagos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Facturacion.PagoCreateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Facturacion.PagoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "GetPagoById",
+    "RelativePath": "api/v1/internal/pagos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "ActualizarEstadoPago",
+    "RelativePath": "api/v1/internal/pagos/{id}/estado",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Facturacion.PagoEstadoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "GetPagosByFacturaId",
+    "RelativePath": "api/v1/internal/pagos/factura/{facturaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "facturaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Facturacion.FacturacionIntegrationController",
+    "Method": "SimularPago",
+    "RelativePath": "api/v1/internal/pagos/simular",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Facturacion.PagoSimularRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Facturacion.PagoSimuladoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetPermisos",
+    "RelativePath": "api/v1/internal/permisos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "GetInternalReservas",
+    "RelativePath": "api/v1/internal/reservas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "CreateInternalReserva",
+    "RelativePath": "api/v1/internal/reservas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "GetInternalReservaById",
+    "RelativePath": "api/v1/internal/reservas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "UpdateInternalReserva",
+    "RelativePath": "api/v1/internal/reservas/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "CancelInternalReserva",
+    "RelativePath": "api/v1/internal/reservas/{id}/cancelar",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "ConfirmInternalReserva",
+    "RelativePath": "api/v1/internal/reservas/{id}/confirmar",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "CalculateInternalReservaPrecio",
+    "RelativePath": "api/v1/internal/reservas/calcular-precio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetRoles",
+    "RelativePath": "api/v1/internal/roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "CreateRol",
+    "RelativePath": "api/v1/internal/roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetRolById",
+    "RelativePath": "api/v1/internal/roles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "UpdateRolById",
+    "RelativePath": "api/v1/internal/roles/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "DeleteRolById",
+    "RelativePath": "api/v1/internal/roles/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetRolByGuid",
+    "RelativePath": "api/v1/internal/roles/{rolGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rolGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "UpdateRolByGuid",
+    "RelativePath": "api/v1/internal/roles/{rolGuid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rolGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "DeleteRolByGuid",
+    "RelativePath": "api/v1/internal/roles/{rolGuid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rolGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "AsignarPermisosRol",
+    "RelativePath": "api/v1/internal/roles/{rolGuid}/permisos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rolGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetSucursales",
+    "RelativePath": "api/v1/internal/sucursales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "CreateSucursal",
+    "RelativePath": "api/v1/internal/sucursales",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetSucursalById",
+    "RelativePath": "api/v1/internal/sucursales/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "UpdateSucursalById",
+    "RelativePath": "api/v1/internal/sucursales/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "DeleteSucursalById",
+    "RelativePath": "api/v1/internal/sucursales/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetSucursalByGuid",
+    "RelativePath": "api/v1/internal/sucursales/{sucursalGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "UpdateSucursalByGuid",
+    "RelativePath": "api/v1/internal/sucursales/{sucursalGuid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "DeleteSucursalByGuid",
+    "RelativePath": "api/v1/internal/sucursales/{sucursalGuid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "InhabilitarSucursal",
+    "RelativePath": "api/v1/internal/sucursales/{sucursalGuid}/inhabilitar",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "UpdateSucursalPoliticas",
+    "RelativePath": "api/v1/internal/sucursales/{sucursalGuid}/politicas",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetTarifas",
+    "RelativePath": "api/v1/internal/tarifas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "CreateTarifa",
+    "RelativePath": "api/v1/internal/tarifas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetTarifaById",
+    "RelativePath": "api/v1/internal/tarifas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "UpdateTarifaById",
+    "RelativePath": "api/v1/internal/tarifas/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "DeleteTarifaById",
+    "RelativePath": "api/v1/internal/tarifas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "DesactivarTarifa",
+    "RelativePath": "api/v1/internal/tarifas/{id}/desactivar",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetTiposHabitacion",
+    "RelativePath": "api/v1/internal/tipos-habitacion",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "CreateTipoHabitacion",
+    "RelativePath": "api/v1/internal/tipos-habitacion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetTipoHabitacionById",
+    "RelativePath": "api/v1/internal/tipos-habitacion/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "UpdateTipoHabitacionById",
+    "RelativePath": "api/v1/internal/tipos-habitacion/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "DeleteTipoHabitacionById",
+    "RelativePath": "api/v1/internal/tipos-habitacion/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetTipoHabitacionByGuid",
+    "RelativePath": "api/v1/internal/tipos-habitacion/{tipoGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "UpdateTipoHabitacionByGuid",
+    "RelativePath": "api/v1/internal/tipos-habitacion/{tipoGuid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetUsuarios",
+    "RelativePath": "api/v1/internal/usuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "CreateUsuario",
+    "RelativePath": "api/v1/internal/usuarios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetUsuarioById",
+    "RelativePath": "api/v1/internal/usuarios/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "UpdateUsuarioById",
+    "RelativePath": "api/v1/internal/usuarios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "DeleteUsuarioById",
+    "RelativePath": "api/v1/internal/usuarios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "InhabilitarUsuario",
+    "RelativePath": "api/v1/internal/usuarios/{id}/inhabilitar",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "GetUsuarioByGuid",
+    "RelativePath": "api/v1/internal/usuarios/{usuarioGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "UpdateUsuarioByGuid",
+    "RelativePath": "api/v1/internal/usuarios/{usuarioGuid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.SeguridadGatewayController",
+    "Method": "DeleteUsuarioByGuid",
+    "RelativePath": "api/v1/internal/usuarios/{usuarioGuid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetValoraciones",
+    "RelativePath": "api/v1/internal/valoraciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "CreateValoracion",
+    "RelativePath": "api/v1/internal/valoraciones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetValoracionById",
+    "RelativePath": "api/v1/internal/valoraciones/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "DeleteValoracionById",
+    "RelativePath": "api/v1/internal/valoraciones/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "ModerarValoracion",
+    "RelativePath": "api/v1/internal/valoraciones/{id}/moderar",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "ResponderValoracion",
+    "RelativePath": "api/v1/internal/valoraciones/{id}/responder",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "SimularPagoInterno",
+    "RelativePath": "api/v1/pagos/simular",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Facturacion.GatewayPagoSimularRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "CreatePublicCliente",
+    "RelativePath": "api/v1/public/clientes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "GetPublicClienteByGuid",
+    "RelativePath": "api/v1/public/clientes/{clienteGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "GetPublicClienteByEmail",
+    "RelativePath": "api/v1/public/clientes/by-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetPublicHabitaciones",
+    "RelativePath": "api/v1/public/habitaciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetPublicHabitacionByGuid",
+    "RelativePath": "api/v1/public/habitaciones/{habitacionGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "habitacionGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.FacturacionGatewayController",
+    "Method": "SimularPagoPublico",
+    "RelativePath": "api/v1/public/pagos/simular",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Facturacion.PublicPagoSimularRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Reservas.ReservasIntegrationController",
+    "Method": "Create",
+    "RelativePath": "api/v1/public/reservas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.CreateReservationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.ReservasGatewayController",
+    "Method": "GetPublicReservas",
+    "RelativePath": "api/v1/public/reservas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Reservas.ReservasIntegrationController",
+    "Method": "GetByGuid",
+    "RelativePath": "api/v1/public/reservas/{reservaGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Reservas.ReservasIntegrationController",
+    "Method": "Cancel",
+    "RelativePath": "api/v1/public/reservas/{reservaGuid}/cancelar",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservaGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.PublicCancelarReservaRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Reservas.ReservasIntegrationController",
+    "Method": "CalculatePrice",
+    "RelativePath": "api/v1/public/reservas/calcular-precio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.ReservationPriceRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationPriceDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetPublicSucursalByGuid",
+    "RelativePath": "api/v1/public/sucursales/{sucursalGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Gateway.AlojamientoGatewayController",
+    "Method": "GetPublicTipoHabitacionByGuid",
+    "RelativePath": "api/v1/public/tipos-habitacion/{tipoHabitacionGuid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoHabitacionGuid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
+    "RelativePath": "health",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

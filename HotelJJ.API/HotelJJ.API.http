@@ -1,0 +1,52 @@
+@HotelJJ_API_HostAddress = https://localhost:7104
+@token = reemplazar_token
+@reservaGuid = 00000000-0000-0000-0000-000000000000
+@estadiaGuid = 00000000-0000-0000-0000-000000000000
+@facturaGuid = 00000000-0000-0000-0000-000000000000
+
+### Auth login
+POST {{HotelJJ_API_HostAddress}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "Admin123*"
+}
+
+### Buscar alojamientos
+GET {{HotelJJ_API_HostAddress}}/api/v1/accommodations/search?Destino=Quito&Pagina=1&Limite=10
+
+### Crear reserva Booking
+POST {{HotelJJ_API_HostAddress}}/api/v1/accommodations/reservas
+Content-Type: application/json
+
+{
+}
+
+### Check-in interno
+POST {{HotelJJ_API_HostAddress}}/api/v1/internal/hospedaje/check-in/{{reservaGuid}}
+Authorization: Bearer {{token}}
+
+### Agregar cargo interno
+POST {{HotelJJ_API_HostAddress}}/api/v1/internal/hospedaje/{{estadiaGuid}}/cargos
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+}
+
+### Check-out interno
+PATCH {{HotelJJ_API_HostAddress}}/api/v1/internal/hospedaje/{{estadiaGuid}}/check-out
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+}
+
+### Generar factura final interna
+POST {{HotelJJ_API_HostAddress}}/api/v1/internal/facturas/generar-final/{{reservaGuid}}
+Authorization: Bearer {{token}}
+
+### Consultar saldo interno
+GET {{HotelJJ_API_HostAddress}}/api/v1/internal/facturas/{{facturaGuid}}/saldo
+Authorization: Bearer {{token}}

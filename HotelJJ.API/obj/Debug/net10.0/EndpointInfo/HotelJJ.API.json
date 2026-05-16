@@ -1,0 +1,5323 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Middleware HotelJJ API",
+    "description": "Middleware bus para orquestar integraciones entre la aplicacion HotelJJ y los microservicios.",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/public/habitaciones": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/public/habitaciones/{habitacionGuid}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "habitacionGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/public/sucursales/{sucursalGuid}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/public/tipos-habitacion/{tipoHabitacionGuid}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "tipoHabitacionGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/sucursales": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/sucursales/{id}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/sucursales/{sucursalGuid}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/sucursales/{sucursalGuid}/politicas": {
+      "patch": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/sucursales/{sucursalGuid}/inhabilitar": {
+      "patch": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/habitaciones": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/habitaciones/{id}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/habitaciones/{habitacionGuid}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "habitacionGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/habitaciones/{id}/estado": {
+      "patch": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/tipos-habitacion": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/tipos-habitacion/{id}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/tipos-habitacion/{tipoGuid}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "tipoGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "tipoGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/tarifas": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/tarifas/{id}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/tarifas/{id}/desactivar": {
+      "patch": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/catalogo-servicios": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/catalogo-servicios/{id}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/valoraciones": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/valoraciones/{id}": {
+      "get": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/valoraciones/{id}/moderar": {
+      "patch": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/valoraciones/{id}/responder": {
+      "patch": {
+        "tags": [
+          "AlojamientoGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/accommodations/search": {
+      "get": {
+        "tags": [
+          "AlojamientoIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "Destino",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "FechaEntrada",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "FechaSalida",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "NumAdultos",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NumNinos",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NumHabitaciones",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TipoAlojamiento",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PrecioMin",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "PrecioMax",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "CategoriaViaje",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "OrdenarPor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Limite",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoSearchItemDTOPagedAlojamientoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoSearchItemDTOPagedAlojamientoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoSearchItemDTOPagedAlojamientoDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/accommodations/{sucursalGuid}": {
+      "get": {
+        "tags": [
+          "AlojamientoIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "fechaEntrada",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fechaSalida",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoDetailDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoDetailDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoDetailDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/accommodations/{sucursalGuid}/reviews": {
+      "get": {
+        "tags": [
+          "AlojamientoIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limite",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoReviewDTOPagedAlojamientoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoReviewDTOPagedAlojamientoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlojamientoReviewDTOPagedAlojamientoDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/accommodations/sucursales/{sucursalGuid}/habitaciones": {
+      "get": {
+        "tags": [
+          "AlojamientoIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "sucursalGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "tipoHabitacionGuid",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AlojamientoHabitacionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AlojamientoHabitacionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AlojamientoHabitacionDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/auth/login": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/refresh": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/auth/refresh": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/register-cliente": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClienteIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClienteIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClienteIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/auth/register-cliente": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClienteIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClienteIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClienteIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginIntegrationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/auth/logout": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/auth/cambiar-password": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarPasswordIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarPasswordIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarPasswordIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/auth/cambiar-password": {
+      "post": {
+        "tags": [
+          "AuthIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarPasswordIntegrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarPasswordIntegrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarPasswordIntegrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas": {
+      "get": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas/{id}": {
+      "get": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas/generar-reserva/{id}": {
+      "post": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas/generar-final/{id}": {
+      "post": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas/{id}/anular": {
+      "patch": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnularFacturaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnularFacturaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnularFacturaRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/pagos": {
+      "get": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "FacturacionIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagoDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/pagos/{id}": {
+      "get": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/pagos/factura/{facturaId}": {
+      "get": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "parameters": [
+          {
+            "name": "facturaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/pagos/{id}/estado": {
+      "patch": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoEstadoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoEstadoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoEstadoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/pagos/simular": {
+      "post": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GatewayPagoSimularRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GatewayPagoSimularRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GatewayPagoSimularRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/public/pagos/simular": {
+      "post": {
+        "tags": [
+          "FacturacionGateway"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicPagoSimularRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicPagoSimularRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicPagoSimularRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas/{facturaGuid}": {
+      "get": {
+        "tags": [
+          "FacturacionIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "facturaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas/generar-reserva/{reservaGuid}": {
+      "post": {
+        "tags": [
+          "FacturacionIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "reservaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas/generar-final/{reservaGuid}": {
+      "post": {
+        "tags": [
+          "FacturacionIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "reservaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/pagos/simular": {
+      "post": {
+        "tags": [
+          "FacturacionIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoSimularRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoSimularRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoSimularRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagoSimuladoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagoSimuladoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagoSimuladoDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/facturas/{facturaGuid}/saldo": {
+      "get": {
+        "tags": [
+          "FacturacionIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "facturaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaSaldoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaSaldoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacturaSaldoDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/estadias": {
+      "get": {
+        "tags": [
+          "HospedajeGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/estadias/{id}": {
+      "get": {
+        "tags": [
+          "HospedajeGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/estadias/checkin/{id_reserva}": {
+      "post": {
+        "tags": [
+          "HospedajeGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id_reserva",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/estadias/{id}/checkout": {
+      "patch": {
+        "tags": [
+          "HospedajeGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutHospedajeRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutHospedajeRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutHospedajeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/estadias/{id}/cargos": {
+      "get": {
+        "tags": [
+          "HospedajeGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "HospedajeGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CargoHospedajeCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CargoHospedajeCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CargoHospedajeCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/cargos-estadia/{id}/anular": {
+      "patch": {
+        "tags": [
+          "HospedajeGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/hospedaje/check-in/{reservaGuid}": {
+      "post": {
+        "tags": [
+          "HospedajeIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "reservaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadiaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadiaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadiaDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/hospedaje/{estadiaGuid}/check-out": {
+      "patch": {
+        "tags": [
+          "HospedajeIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "estadiaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutHospedajeRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutHospedajeRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutHospedajeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/hospedaje/estadias/{estadiaGuid}": {
+      "get": {
+        "tags": [
+          "HospedajeIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "estadiaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadiaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadiaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadiaDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/hospedaje/{estadiaGuid}/cargos": {
+      "post": {
+        "tags": [
+          "HospedajeIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "estadiaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CargoHospedajeCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CargoHospedajeCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CargoHospedajeCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CargoEstadiaDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CargoEstadiaDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CargoEstadiaDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/hospedaje/cargos/{cargoGuid}/anular": {
+      "patch": {
+        "tags": [
+          "HospedajeIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "cargoGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "HotelJJ.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "HotelJJ.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/flujos/booking/reservas": {
+      "post": {
+        "tags": [
+          "IntegratedFlow"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedBookingCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedBookingCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedBookingCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedBookingResultDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedBookingResultDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedBookingResultDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/flujos/booking/reservas/{reservaGuid}/pagar": {
+      "post": {
+        "tags": [
+          "IntegratedFlow"
+        ],
+        "parameters": [
+          {
+            "name": "reservaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedPaymentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedPaymentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedPaymentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedBookingResultDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedBookingResultDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedBookingResultDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/flujos/operacion/check-in/{reservaGuid}": {
+      "post": {
+        "tags": [
+          "IntegratedFlow"
+        ],
+        "parameters": [
+          {
+            "name": "reservaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedCheckInResultDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedCheckInResultDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedCheckInResultDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/flujos/operacion/check-out/{estadiaGuid}": {
+      "patch": {
+        "tags": [
+          "IntegratedFlow"
+        ],
+        "parameters": [
+          {
+            "name": "estadiaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedCheckOutRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedCheckOutRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegratedCheckOutRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedCheckOutResultDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedCheckOutResultDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegratedCheckOutResultDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/public/reservas": {
+      "get": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ReservasIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReservationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReservationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReservationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/public/clientes/by-email": {
+      "get": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/public/clientes/{clienteGuid}": {
+      "get": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "parameters": [
+          {
+            "name": "clienteGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/public/clientes": {
+      "post": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/reservas": {
+      "get": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/reservas/{id}": {
+      "get": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/reservas/calcular-precio": {
+      "post": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/reservas/{id}/confirmar": {
+      "patch": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/reservas/{id}/cancelar": {
+      "patch": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/clientes": {
+      "get": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/clientes/{id}": {
+      "get": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ReservasGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/accommodations/reservas": {
+      "post": {
+        "tags": [
+          "ReservasIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReservationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReservationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReservationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/public/reservas/{reservaGuid}": {
+      "get": {
+        "tags": [
+          "ReservasIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "reservaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/accommodations/reservas/{reservaGuid}": {
+      "get": {
+        "tags": [
+          "ReservasIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "reservaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/public/reservas/calcular-precio": {
+      "post": {
+        "tags": [
+          "ReservasIntegration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservationPriceRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservationPriceRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReservationPriceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationPriceDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationPriceDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservationPriceDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/public/reservas/{reservaGuid}/cancelar": {
+      "patch": {
+        "tags": [
+          "ReservasIntegration"
+        ],
+        "parameters": [
+          {
+            "name": "reservaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicCancelarReservaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicCancelarReservaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicCancelarReservaRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/usuarios": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/usuarios/{id}": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/usuarios/{usuarioGuid}": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/usuarios/{id}/inhabilitar": {
+      "patch": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/roles": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/roles/{id}": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/roles/{rolGuid}": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "rolGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "rolGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "rolGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/roles/{rolGuid}/permisos": {
+      "post": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "rolGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/permisos": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/auditoria": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/auditoria/{auditoriaGuid}": {
+      "get": {
+        "tags": [
+          "SeguridadGateway"
+        ],
+        "parameters": [
+          {
+            "name": "auditoriaGuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AlojamientoAvailabilityByRoomTypeDTO": {
+        "type": "object",
+        "properties": {
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "disponibles": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoAvailabilityDTO": {
+        "type": "object",
+        "properties": {
+          "fechaEntrada": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaSalida": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "porTipoHabitacion": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlojamientoAvailabilityByRoomTypeDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoDetailDTO": {
+        "type": "object",
+        "properties": {
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "estrellas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoAlojamiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioDesde": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenPrincipalUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "promedioValoracion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "totalValoraciones": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "habitacionesDisponibles": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviciosDestacados": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "horaCheckIn": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckOut": {
+            "type": "string",
+            "nullable": true
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          },
+          "descripcionCompleta": {
+            "type": "string",
+            "nullable": true
+          },
+          "tiposHabitacion": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlojamientoRoomTypeDTO"
+            },
+            "nullable": true
+          },
+          "tarifasActivas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlojamientoTariffDTO"
+            },
+            "nullable": true
+          },
+          "amenities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "politicas": {
+            "$ref": "#/components/schemas/AlojamientoPolicyDTO"
+          },
+          "disponibilidad": {
+            "$ref": "#/components/schemas/AlojamientoAvailabilityDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoHabitacionDTO": {
+        "type": "object",
+        "properties": {
+          "habitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoNombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "piso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "capacidadAdultos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadNinos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoHabitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "disponibleEnRango": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoPolicyDTO": {
+        "type": "object",
+        "properties": {
+          "horaCheckIn": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckOut": {
+            "type": "string",
+            "nullable": true
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          },
+          "politicas": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoReviewDTO": {
+        "type": "object",
+        "properties": {
+          "valoracionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "puntuacion": {
+            "type": "number",
+            "format": "double"
+          },
+          "comentarioPositivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "comentarioNegativo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoViaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "nombreVisibleCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "respuestaPropiedad": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoReviewDTOPagedAlojamientoDTO": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlojamientoReviewDTO"
+            },
+            "nullable": true
+          },
+          "pagina": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limite": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalResultados": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPaginas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tieneSiguiente": {
+            "type": "boolean"
+          },
+          "tieneAnterior": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoRoomTypeDTO": {
+        "type": "object",
+        "properties": {
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCama": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadAdultos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacidadNinos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "areaM2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "precioBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "imagenes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "disponiblesEnRango": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoSearchItemDTO": {
+        "type": "object",
+        "properties": {
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "estrellas": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoAlojamiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioDesde": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenPrincipalUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "promedioValoracion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "totalValoraciones": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "habitacionesDisponibles": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviciosDestacados": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "horaCheckIn": {
+            "type": "string",
+            "nullable": true
+          },
+          "horaCheckOut": {
+            "type": "string",
+            "nullable": true
+          },
+          "aceptaNinos": {
+            "type": "boolean"
+          },
+          "permiteMascotas": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoSearchItemDTOPagedAlojamientoDTO": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlojamientoSearchItemDTO"
+            },
+            "nullable": true
+          },
+          "pagina": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limite": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalResultados": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPaginas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tieneSiguiente": {
+            "type": "boolean"
+          },
+          "tieneAnterior": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlojamientoTariffDTO": {
+        "type": "object",
+        "properties": {
+          "tarifaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioPorNoche": {
+            "type": "number",
+            "format": "double"
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "minNoches": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AnularFacturaRequest": {
+        "type": "object",
+        "properties": {
+          "motivo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CambiarPasswordIntegrationRequest": {
+        "type": "object",
+        "properties": {
+          "passwordActual": {
+            "type": "string",
+            "nullable": true
+          },
+          "passwordNuevo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CargoEstadiaDTO": {
+        "type": "object",
+        "properties": {
+          "cargoGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "descripcionCargo": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "double"
+          },
+          "subtotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorIva": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalCargo": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaConsumoUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estadoCargo": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CargoHospedajeCreateRequest": {
+        "type": "object",
+        "properties": {
+          "idCatalogo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descripcionCargo": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorIva": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CheckOutHospedajeRequest": {
+        "type": "object",
+        "properties": {
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiereMantenimiento": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateReservationRequest": {
+        "type": "object",
+        "properties": {
+          "clienteGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descuentoAplicado": {
+            "type": "number",
+            "format": "double"
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "esWalkin": {
+            "type": "boolean"
+          },
+          "origenCanalReserva": {
+            "type": "string",
+            "nullable": true
+          },
+          "cliente": {
+            "$ref": "#/components/schemas/ReservationClientRequest"
+          },
+          "habitaciones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReservationRoomRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EstadiaDTO": {
+        "type": "object",
+        "properties": {
+          "estadiaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "checkinUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "checkoutUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "estadoEstadia": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacionesCheckin": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacionesCheckout": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiereMantenimiento": {
+            "type": "boolean"
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cargos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CargoEstadiaDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FacturaDTO": {
+        "type": "object",
+        "properties": {
+          "facturaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idReserva": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroFactura": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoFactura": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaEmision": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "subtotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorIva": {
+            "type": "number",
+            "format": "double"
+          },
+          "descuentoTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "saldoPendiente": {
+            "type": "number",
+            "format": "double"
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacionesFactura": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "detalles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FacturaDetalleDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FacturaDetalleDTO": {
+        "type": "object",
+        "properties": {
+          "facturaDetalleGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoItem": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenciaTipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenciaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "descripcionItem": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "double"
+          },
+          "subtotalLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorIvaLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "descuentoLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FacturaSaldoDTO": {
+        "type": "object",
+        "properties": {
+          "facturaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "saldoPendiente": {
+            "type": "number",
+            "format": "double"
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GatewayPagoSimularRequest": {
+        "type": "object",
+        "properties": {
+          "idReserva": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "tokenPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "referencia": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegratedBookingCreateRequest": {
+        "type": "object",
+        "properties": {
+          "reserva": {
+            "$ref": "#/components/schemas/CreateReservationRequest"
+          },
+          "generarFacturaInicial": {
+            "type": "boolean"
+          },
+          "pagoInicial": {
+            "$ref": "#/components/schemas/IntegratedPaymentRequest"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegratedBookingResultDTO": {
+        "type": "object",
+        "properties": {
+          "reserva": {
+            "$ref": "#/components/schemas/ReservationDTO"
+          },
+          "facturaInicial": {
+            "$ref": "#/components/schemas/FacturaDTO"
+          },
+          "pago": {
+            "$ref": "#/components/schemas/PagoDTO"
+          },
+          "pagoSimulado": {
+            "$ref": "#/components/schemas/PagoSimuladoDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegratedCheckInResultDTO": {
+        "type": "object",
+        "properties": {
+          "reserva": {
+            "$ref": "#/components/schemas/ReservationDTO"
+          },
+          "estadia": {
+            "$ref": "#/components/schemas/EstadiaDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegratedCheckOutRequest": {
+        "type": "object",
+        "properties": {
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiereMantenimiento": {
+            "type": "boolean"
+          },
+          "generarFacturaFinal": {
+            "type": "boolean"
+          },
+          "reservaGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegratedCheckOutResultDTO": {
+        "type": "object",
+        "properties": {
+          "estadia": {
+            "$ref": "#/components/schemas/EstadiaDTO"
+          },
+          "facturaFinal": {
+            "$ref": "#/components/schemas/FacturaDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegratedPaymentRequest": {
+        "type": "object",
+        "properties": {
+          "facturaGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "metodoPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "esPagoElectronico": {
+            "type": "boolean"
+          },
+          "proveedorPasarela": {
+            "type": "string",
+            "nullable": true
+          },
+          "transaccionExterna": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoAutorizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "referencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCambio": {
+            "type": "number",
+            "format": "double"
+          },
+          "simularPago": {
+            "type": "boolean"
+          },
+          "tokenPago": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginIntegrationRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginIntegrationResponse": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiresIn": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "idCliente": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "clienteGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "usuarioGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreCompleto": {
+            "type": "string",
+            "nullable": true
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LogoutIntegrationRequest": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagoCreateRequest": {
+        "type": "object",
+        "properties": {
+          "facturaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "metodoPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "esPagoElectronico": {
+            "type": "boolean"
+          },
+          "proveedorPasarela": {
+            "type": "string",
+            "nullable": true
+          },
+          "transaccionExterna": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoAutorizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "referencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCambio": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagoDTO": {
+        "type": "object",
+        "properties": {
+          "pagoGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "metodoPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "esPagoElectronico": {
+            "type": "boolean"
+          },
+          "proveedorPasarela": {
+            "type": "string",
+            "nullable": true
+          },
+          "transaccionExterna": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoAutorizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "referencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaPagoUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCambio": {
+            "type": "number",
+            "format": "double"
+          },
+          "respuestaPasarela": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistroUtc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagoEstadoRequest": {
+        "type": "object",
+        "properties": {
+          "nuevoEstado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagoSimuladoDTO": {
+        "type": "object",
+        "properties": {
+          "codigoReserva": {
+            "type": "string",
+            "nullable": true
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "estadoPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoReserva": {
+            "type": "string",
+            "nullable": true
+          },
+          "transaccionExterna": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoAutorizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaPagoUtc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagoSimularRequest": {
+        "type": "object",
+        "properties": {
+          "reservaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "tokenPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "referencia": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicCancelarReservaRequest": {
+        "type": "object",
+        "properties": {
+          "motivo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicPagoSimularRequest": {
+        "type": "object",
+        "properties": {
+          "reservaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "tokenPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "referencia": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefreshTokenIntegrationRequest": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterClienteIntegrationRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservationClientRequest": {
+        "type": "object",
+        "properties": {
+          "tipoIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombres": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellidos": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservationDTO": {
+        "type": "object",
+        "properties": {
+          "reservaGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "codigoReserva": {
+            "type": "string",
+            "nullable": true
+          },
+          "clienteGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sucursalGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fechaReservaUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "subtotalReserva": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorIva": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalReserva": {
+            "type": "number",
+            "format": "double"
+          },
+          "descuentoAplicado": {
+            "type": "number",
+            "format": "double"
+          },
+          "saldoPendiente": {
+            "type": "number",
+            "format": "double"
+          },
+          "origenCanalReserva": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoReserva": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaConfirmacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaCancelacionUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "motivoCancelacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "esWalkin": {
+            "type": "boolean"
+          },
+          "habitaciones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReservationRoomDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservationPriceDTO": {
+        "type": "object",
+        "properties": {
+          "habitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "precioNocheAplicado": {
+            "type": "number",
+            "format": "double"
+          },
+          "subtotalLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorIvaLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "origenPrecio": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservationPriceRequest": {
+        "type": "object",
+        "properties": {
+          "habitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "canal": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservationRoomDTO": {
+        "type": "object",
+        "properties": {
+          "reservaHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "habitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "numAdultos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numNinos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioNocheAplicado": {
+            "type": "number",
+            "format": "double"
+          },
+          "subtotalLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorIvaLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "descuentoLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalLinea": {
+            "type": "number",
+            "format": "double"
+          },
+          "estadoDetalle": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReservationRoomRequest": {
+        "type": "object",
+        "properties": {
+          "habitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoHabitacionGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "numHabitaciones": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "numAdultos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numNinos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descuentoLinea": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Ingrese el token JWT con el formato: Bearer {token}",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
