@@ -52,15 +52,19 @@ public static class AuthBusinessMapper
     {
         return new TokenIntegrationDTO
         {
-            AccessToken = token.AccessToken,
+            Token = token.Token,
             RefreshToken = token.RefreshToken,
             ExpiresIn = token.ExpiresIn,
-            ExpiresAt = DateTimeOffset.UtcNow.AddSeconds(token.ExpiresIn),
+            Expiration = token.Expiration,
+            ExpiresAt = token.Expiration == default
+                ? DateTimeOffset.UtcNow.AddSeconds(token.ExpiresIn)
+                : new DateTimeOffset(DateTime.SpecifyKind(token.Expiration, DateTimeKind.Utc)),
             IdCliente = token.IdCliente,
             ClienteGuid = token.ClienteGuid,
+            UsuarioId = token.UsuarioId,
             UsuarioGuid = token.UsuarioGuid,
             Username = token.Username,
-            Correo = token.Correo,
+            Email = token.Email,
             NombreCompleto = token.NombreCompleto,
             Roles = token.Roles
         };

@@ -1,51 +1,3 @@
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\buildcheck\HotelJJ.API\appsettings.Development.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\buildcheck\HotelJJ.API\appsettings.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\buildcheck\HotelJJ.API\HotelJJ.API.staticwebassets.endpoints.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\buildcheck\HotelJJ.API\HotelJJ.API.deps.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\buildcheck\HotelJJ.API\HotelJJ.API.runtimeconfig.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\buildcheck\HotelJJ.API\HotelJJ.API.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\buildcheck\HotelJJ.API\HotelJJ.API.pdb
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\buildcheck\HotelJJ.API\HotelJJ.API.exe
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\appsettings.Development.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\appsettings.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\bin\Debug\net10.0\appsettings.Development.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\bin\Debug\net10.0\appsettings.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\bin\Debug\net10.0\HotelJJ.API.deps.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\bin\Debug\net10.0\HotelJJ.API.runtimeconfig.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\bin\Debug\net10.0\HotelJJ.API.staticwebassets.endpoints.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.API.staticwebassets.endpoints.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.API.deps.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.API.runtimeconfig.json
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.API.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.API.pdb
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Asp.Versioning.Abstractions.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Asp.Versioning.Http.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Asp.Versioning.Mvc.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Asp.Versioning.Mvc.ApiExplorer.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Google.Protobuf.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Grpc.Core.Api.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Grpc.Net.Client.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Grpc.Net.Common.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Microsoft.OpenApi.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.Business.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.Contracts.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.DataAccess.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.DataManagement.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.Business.pdb
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.Contracts.pdb
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.DataAccess.pdb
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\.build\middleware\Debug\net10.0\HotelJJ.DataManagement.pdb
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\appsettings.json
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.API.staticwebassets.endpoints.json
@@ -61,6 +13,7 @@ C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Google.Protobuf.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Grpc.Core.Api.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Grpc.Net.Client.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Grpc.Net.ClientFactory.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Grpc.Net.Common.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
@@ -74,14 +27,20 @@ C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Facturacion.Contracts.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.Business.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.Contracts.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.DataAccess.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Reservas.Contracts.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.Business.pdb
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.Contracts.pdb
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.DataAccess.pdb
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.DataManagement.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Alojamiento.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Facturacion.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Reservas.Contracts.pdb
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.csproj.AssemblyReference.cache
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\rpswa.dswa.cache.json
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.GeneratedMSBuildEditorConfig.editorconfig
@@ -90,6 +49,7 @@ C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.csproj.CoreCompileInputs.cache
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.sourcelink.json
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -105,4 +65,78 @@ C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.pdb
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.genruntimeconfig.cache
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\ref\HotelJJ.API.dll
-C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.API.staticwebassets.endpoints.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\appsettings.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.API.exe
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.API.deps.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.API.runtimeconfig.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.API.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.API.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Asp.Versioning.Abstractions.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Asp.Versioning.Http.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Asp.Versioning.Mvc.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Asp.Versioning.Mvc.ApiExplorer.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Google.Protobuf.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Grpc.Core.Api.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Grpc.Net.Client.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Grpc.Net.ClientFactory.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Grpc.Net.Common.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Alojamiento.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Facturacion.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.Business.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.DataAccess.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.DataManagement.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Reservas.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.Business.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.DataAccess.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\HotelJJ.DataManagement.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Alojamiento.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Facturacion.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\bin\Debug\net10.0\Reservas.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.csproj.AssemblyReference.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.AssemblyInfoInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.AssemblyInfo.cs
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.csproj.CoreCompileInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.sourcelink.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\scopedcss\bundle\HotelJJ.API.styles.css
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ..DF5A0072.Up2Date
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\refint\HotelJJ.API.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\HotelJJ.API.genruntimeconfig.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.API\obj\Debug\net10.0\ref\HotelJJ.API.dll
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\appsettings.Development.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\appsettings.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\HotelJJ.API.staticwebassets.endpoints.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\HotelJJ.API.exe
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\HotelJJ.API.deps.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\HotelJJ.API.runtimeconfig.json
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\HotelJJ.API.dll
+c:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\buildcheck\HotelJJ.API\HotelJJ.API.pdb

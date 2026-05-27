@@ -2,11 +2,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HotelJJ.Contracts\HotelJJ.Contracts.csproj" />
+    <ProjectReference Include="..\..\Microservicio.Reservas\Reservas.Contracts\Reservas.Contracts.csproj" />
+    <ProjectReference Include="..\..\Microservicio.Alojamiento\Alojamiento.Contracts\Alojamiento.Contracts.csproj" />
+    <ProjectReference Include="..\..\Microservicio.Facturacion\Facturacion.Contracts\Facturacion.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.29.3" />
+    <PackageReference Include="Google.Protobuf" Version="3.30.2" />
     <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
+    <PackageReference Include="Grpc.Core.Api" Version="2.71.0" />
     <PackageReference Include="Grpc.Tools" Version="2.72.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>

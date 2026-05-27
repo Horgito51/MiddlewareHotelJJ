@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_6",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "sucursalGuid",
-        "Type": "System.Guid",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -61,7 +61,7 @@
     "Parameters": [
       {
         "Name": "sucursalGuid",
-        "Type": "System.Guid",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -103,7 +103,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationDTO",
+        "Type": "HotelJJ.API.Models.Responses.Reservas.ReservationResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -123,19 +123,60 @@
     "Parameters": [
       {
         "Name": "reservaGuid",
-        "Type": "System.Guid",
+        "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "clienteGuid",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationDTO",
+        "Type": "HotelJJ.API.Models.Responses.Reservas.ReservationResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
         "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
       }
     ]
   },
@@ -235,7 +276,7 @@
     "Parameters": [
       {
         "Name": "sucursalGuid",
-        "Type": "System.Guid",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -257,6 +298,42 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IReadOnlyList\u00601[[HotelJJ.Business.DTOs.Alojamiento.AlojamientoHabitacionDTO, HotelJJ.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HotelJJ.API.Controllers.V1.Alojamiento.AlojamientoIntegrationController",
+    "Method": "GetValoracionesBySucursal",
+    "RelativePath": "api/v1/alojamiento/sucursales/{sucursalGuid}/valoraciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limite",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HotelJJ.Business.DTOs.Alojamiento.PagedAlojamientoDTO\u00601[[HotelJJ.Business.DTOs.Alojamiento.AlojamientoReviewDTO, HotelJJ.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -383,7 +460,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "tabla",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -545,7 +628,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.CatalogoServicioUpsertRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -576,6 +665,11 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.CatalogoServicioUpsertRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -603,7 +697,18 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -613,7 +718,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.ClienteCreateRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -643,6 +754,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.ClienteUpdateRequest",
         "IsRequired": true
       }
     ],
@@ -1068,7 +1184,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "estado",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1078,7 +1200,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.HabitacionCreateRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1125,6 +1253,11 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.HabitacionUpdateRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1156,6 +1289,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.HabitacionEstadoRequest",
         "IsRequired": true
       }
     ],
@@ -1288,7 +1426,18 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1366,6 +1515,16 @@
         "Name": "facturaId",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -1423,7 +1582,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.InternalReservaCreateRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1454,6 +1619,11 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.ReservaUpdateRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1469,6 +1639,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.CancelReservationRequest",
         "IsRequired": true
       }
     ],
@@ -1497,7 +1672,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.ReservationPriceRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1507,7 +1688,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "estado",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1517,7 +1704,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Seguridad.RolUpsertRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1547,6 +1740,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Seguridad.RolUpsertRequest",
         "IsRequired": true
       }
     ],
@@ -1596,6 +1794,11 @@
         "Name": "rolGuid",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Seguridad.RolUpsertRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1628,6 +1831,11 @@
         "Name": "rolGuid",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Seguridad.RolPermisosUpsertRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1639,7 +1847,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "estado",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1649,7 +1863,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.SucursalUpsertRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1679,6 +1899,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.SucursalUpsertRequest",
         "IsRequired": true
       }
     ],
@@ -1728,6 +1953,11 @@
         "Name": "sucursalGuid",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.SucursalUpsertRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1760,6 +1990,11 @@
         "Name": "sucursalGuid",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.InhabilitarRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1775,6 +2010,11 @@
       {
         "Name": "sucursalGuid",
         "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.SucursalPoliticasPatchRequest",
         "IsRequired": true
       }
     ],
@@ -1797,7 +2037,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.TarifaUpsertRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1827,6 +2073,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.TarifaUpsertRequest",
         "IsRequired": true
       }
     ],
@@ -1871,7 +2122,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "estado",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1881,7 +2138,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.TipoHabitacionUpsertRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1911,6 +2174,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.TipoHabitacionUpsertRequest",
         "IsRequired": true
       }
     ],
@@ -1960,6 +2228,11 @@
         "Name": "tipoGuid",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.TipoHabitacionUpsertRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1971,7 +2244,23 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "estado",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1981,7 +2270,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Seguridad.UsuarioCreateRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -2011,6 +2306,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Seguridad.UsuarioUpdateRequest",
         "IsRequired": true
       }
     ],
@@ -2044,6 +2344,11 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Seguridad.SeguridadInhabilitarRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -2075,6 +2380,11 @@
       {
         "Name": "usuarioGuid",
         "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Seguridad.UsuarioUpdateRequest",
         "IsRequired": true
       }
     ],
@@ -2113,7 +2423,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.ValoracionCreateRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -2160,6 +2476,11 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.ValoracionModeracionRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -2175,6 +2496,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Alojamiento.ValoracionRespuestaRequest",
         "IsRequired": true
       }
     ],
@@ -2203,7 +2529,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HotelJJ.API.Models.Requests.Reservas.ClienteCreateRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -2229,7 +2561,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "correo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -2239,7 +2577,23 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "fechaInicio",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaFin",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "sucursalGuid",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -2290,7 +2644,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationDTO",
+        "Type": "HotelJJ.API.Models.Responses.Reservas.ReservationResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2307,7 +2661,23 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "estado",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -2320,19 +2690,60 @@
     "Parameters": [
       {
         "Name": "reservaGuid",
-        "Type": "System.Guid",
+        "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "clienteGuid",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "HotelJJ.Business.DTOs.Reservas.ReservationDTO",
+        "Type": "HotelJJ.API.Models.Responses.Reservas.ReservationResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
         "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
       }
     ]
   },
@@ -2419,6 +2830,22 @@
     "ContainingType": "Program\u002B\u003C\u003Ec",
     "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
     "RelativePath": "health",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
+    "RelativePath": "health/downstreams",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,

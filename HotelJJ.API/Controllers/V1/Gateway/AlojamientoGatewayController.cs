@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using HotelJJ.API.Infrastructure.Proxy;
+using HotelJJ.API.Models.Requests.Alojamiento;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace HotelJJ.API.Controllers.V1.Gateway;
 [ApiController]
 [ApiVersion("1.0")]
 [Authorize]
+[EnableRequestBodyBuffering]
 public class AlojamientoGatewayController : ControllerBase
 {
     private readonly IMicroserviceProxy _microserviceProxy;
@@ -19,7 +21,11 @@ public class AlojamientoGatewayController : ControllerBase
 
     [HttpGet("/api/v{version:apiVersion}/public/habitaciones")]
     [AllowAnonymous]
-    public Task<IActionResult> GetPublicHabitaciones(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> GetPublicHabitaciones(
+        [FromQuery] DateTime? fechaInicio = null,
+        [FromQuery] DateTime? fechaFin = null,
+        [FromQuery] Guid? sucursalGuid = null,
+        CancellationToken cancellationToken = default) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpGet("/api/v{version:apiVersion}/public/habitaciones/{habitacionGuid:guid}")]
     [AllowAnonymous]
@@ -34,7 +40,9 @@ public class AlojamientoGatewayController : ControllerBase
     public Task<IActionResult> GetPublicTipoHabitacionByGuid(Guid tipoHabitacionGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpGet("/api/v{version:apiVersion}/internal/sucursales")]
-    public Task<IActionResult> GetSucursales(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> GetSucursales(
+        [FromQuery] string? estado = null,
+        CancellationToken cancellationToken = default) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpGet("/api/v{version:apiVersion}/internal/sucursales/{id:int}")]
     public Task<IActionResult> GetSucursalById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
@@ -43,19 +51,33 @@ public class AlojamientoGatewayController : ControllerBase
     public Task<IActionResult> GetSucursalByGuid(Guid sucursalGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPost("/api/v{version:apiVersion}/internal/sucursales")]
-    public Task<IActionResult> CreateSucursal(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> CreateSucursal(
+        [FromBody] SucursalUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPut("/api/v{version:apiVersion}/internal/sucursales/{id:int}")]
-    public Task<IActionResult> UpdateSucursalById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> UpdateSucursalById(
+        int id,
+        [FromBody] SucursalUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPut("/api/v{version:apiVersion}/internal/sucursales/{sucursalGuid:guid}")]
-    public Task<IActionResult> UpdateSucursalByGuid(Guid sucursalGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> UpdateSucursalByGuid(
+        Guid sucursalGuid,
+        [FromBody] SucursalUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPatch("/api/v{version:apiVersion}/internal/sucursales/{sucursalGuid:guid}/politicas")]
-    public Task<IActionResult> UpdateSucursalPoliticas(Guid sucursalGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> UpdateSucursalPoliticas(
+        Guid sucursalGuid,
+        [FromBody] SucursalPoliticasPatchRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPatch("/api/v{version:apiVersion}/internal/sucursales/{sucursalGuid:guid}/inhabilitar")]
-    public Task<IActionResult> InhabilitarSucursal(Guid sucursalGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> InhabilitarSucursal(
+        Guid sucursalGuid,
+        [FromBody] InhabilitarRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpDelete("/api/v{version:apiVersion}/internal/sucursales/{id:int}")]
     public Task<IActionResult> DeleteSucursalById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
@@ -64,7 +86,9 @@ public class AlojamientoGatewayController : ControllerBase
     public Task<IActionResult> DeleteSucursalByGuid(Guid sucursalGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpGet("/api/v{version:apiVersion}/internal/habitaciones")]
-    public Task<IActionResult> GetHabitaciones(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> GetHabitaciones(
+        [FromQuery] string? estado = null,
+        CancellationToken cancellationToken = default) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpGet("/api/v{version:apiVersion}/internal/habitaciones/{id:int}")]
     public Task<IActionResult> GetHabitacionById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
@@ -73,19 +97,29 @@ public class AlojamientoGatewayController : ControllerBase
     public Task<IActionResult> GetHabitacionByGuid(Guid habitacionGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPost("/api/v{version:apiVersion}/internal/habitaciones")]
-    public Task<IActionResult> CreateHabitacion(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> CreateHabitacion(
+        [FromBody] HabitacionCreateRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPut("/api/v{version:apiVersion}/internal/habitaciones/{id:int}")]
-    public Task<IActionResult> UpdateHabitacionById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> UpdateHabitacionById(
+        int id,
+        [FromBody] HabitacionUpdateRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPatch("/api/v{version:apiVersion}/internal/habitaciones/{id:int}/estado")]
-    public Task<IActionResult> ChangeHabitacionEstado(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> ChangeHabitacionEstado(
+        int id,
+        [FromBody] HabitacionEstadoRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpDelete("/api/v{version:apiVersion}/internal/habitaciones/{id:int}")]
     public Task<IActionResult> DeleteHabitacionById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpGet("/api/v{version:apiVersion}/internal/tipos-habitacion")]
-    public Task<IActionResult> GetTiposHabitacion(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> GetTiposHabitacion(
+        [FromQuery] string? estado = null,
+        CancellationToken cancellationToken = default) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpGet("/api/v{version:apiVersion}/internal/tipos-habitacion/{id:int}")]
     public Task<IActionResult> GetTipoHabitacionById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
@@ -94,13 +128,21 @@ public class AlojamientoGatewayController : ControllerBase
     public Task<IActionResult> GetTipoHabitacionByGuid(Guid tipoGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPost("/api/v{version:apiVersion}/internal/tipos-habitacion")]
-    public Task<IActionResult> CreateTipoHabitacion(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> CreateTipoHabitacion(
+        [FromBody] TipoHabitacionUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPut("/api/v{version:apiVersion}/internal/tipos-habitacion/{id:int}")]
-    public Task<IActionResult> UpdateTipoHabitacionById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> UpdateTipoHabitacionById(
+        int id,
+        [FromBody] TipoHabitacionUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPut("/api/v{version:apiVersion}/internal/tipos-habitacion/{tipoGuid:guid}")]
-    public Task<IActionResult> UpdateTipoHabitacionByGuid(Guid tipoGuid, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> UpdateTipoHabitacionByGuid(
+        Guid tipoGuid,
+        [FromBody] TipoHabitacionUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpDelete("/api/v{version:apiVersion}/internal/tipos-habitacion/{id:int}")]
     public Task<IActionResult> DeleteTipoHabitacionById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
@@ -112,10 +154,15 @@ public class AlojamientoGatewayController : ControllerBase
     public Task<IActionResult> GetTarifaById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPost("/api/v{version:apiVersion}/internal/tarifas")]
-    public Task<IActionResult> CreateTarifa(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> CreateTarifa(
+        [FromBody] TarifaUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPut("/api/v{version:apiVersion}/internal/tarifas/{id:int}")]
-    public Task<IActionResult> UpdateTarifaById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> UpdateTarifaById(
+        int id,
+        [FromBody] TarifaUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPatch("/api/v{version:apiVersion}/internal/tarifas/{id:int}/desactivar")]
     public Task<IActionResult> DesactivarTarifa(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
@@ -130,10 +177,15 @@ public class AlojamientoGatewayController : ControllerBase
     public Task<IActionResult> GetCatalogoServicioById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPost("/api/v{version:apiVersion}/internal/catalogo-servicios")]
-    public Task<IActionResult> CreateCatalogoServicio(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> CreateCatalogoServicio(
+        [FromBody] CatalogoServicioUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPut("/api/v{version:apiVersion}/internal/catalogo-servicios/{id:int}")]
-    public Task<IActionResult> UpdateCatalogoServicioById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> UpdateCatalogoServicioById(
+        int id,
+        [FromBody] CatalogoServicioUpsertRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpDelete("/api/v{version:apiVersion}/internal/catalogo-servicios/{id:int}")]
     public Task<IActionResult> DeleteCatalogoServicioById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
@@ -145,13 +197,21 @@ public class AlojamientoGatewayController : ControllerBase
     public Task<IActionResult> GetValoracionById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPost("/api/v{version:apiVersion}/internal/valoraciones")]
-    public Task<IActionResult> CreateValoracion(CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> CreateValoracion(
+        [FromBody] ValoracionCreateRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPatch("/api/v{version:apiVersion}/internal/valoraciones/{id:int}/moderar")]
-    public Task<IActionResult> ModerarValoracion(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> ModerarValoracion(
+        int id,
+        [FromBody] ValoracionModeracionRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpPatch("/api/v{version:apiVersion}/internal/valoraciones/{id:int}/responder")]
-    public Task<IActionResult> ResponderValoracion(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
+    public Task<IActionResult> ResponderValoracion(
+        int id,
+        [FromBody] ValoracionRespuestaRequest request,
+        CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);
 
     [HttpDelete("/api/v{version:apiVersion}/internal/valoraciones/{id:int}")]
     public Task<IActionResult> DeleteValoracionById(int id, CancellationToken cancellationToken) => ProxyToAlojamientoAsync(cancellationToken);

@@ -33,7 +33,6 @@ public class AlojamientoDetailDTO : AlojamientoSearchItemDTO
     public List<string> Amenities { get; set; } = new();
     public List<string> Imagenes { get; set; } = new();
     public AlojamientoPolicyDTO Politicas { get; set; } = new();
-    public AlojamientoAvailabilityDTO? Disponibilidad { get; set; }
 }
 
 public class AlojamientoRoomTypeDTO
@@ -45,6 +44,9 @@ public class AlojamientoRoomTypeDTO
     public int CapacidadNinos { get; set; }
     public decimal? AreaM2 { get; set; }
     public decimal PrecioBase { get; set; }
+    public decimal PrecioNocheAplicado { get; set; }
+    public Guid? TarifaGuid { get; set; }
+    public string? OrigenPrecio { get; set; }
     public List<string> Imagenes { get; set; } = new();
     public int? DisponiblesEnRango { get; set; }
 }
@@ -72,8 +74,8 @@ public class AlojamientoPolicyDTO
 
 public class AlojamientoAvailabilityDTO
 {
-    public DateTime FechaEntrada { get; set; }
-    public DateTime FechaSalida { get; set; }
+    public DateTime FechaInicio { get; set; }
+    public DateTime FechaFin { get; set; }
     public List<AlojamientoAvailabilityByRoomTypeDTO> PorTipoHabitacion { get; set; } = new();
 }
 

@@ -1,10 +1,17 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace HotelJJ.API.Models.Requests.Alojamiento;
 
 public class AlojamientoSearchRequest
 {
     public string? Destino { get; set; }
+
+    [FromQuery(Name = "fechaInicio")]
     public DateTime? FechaEntrada { get; set; }
+
+    [FromQuery(Name = "fechaFin")]
     public DateTime? FechaSalida { get; set; }
+
     public int? NumAdultos { get; set; }
     public int? NumNinos { get; set; }
     public int? NumHabitaciones { get; set; }

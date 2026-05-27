@@ -2,7 +2,6 @@ namespace HotelJJ.DataManagement.Reservas.Models;
 
 public class ReservaCreateDataRequest
 {
-    public Guid ClienteGuid { get; set; }
     public Guid SucursalGuid { get; set; }
     public DateTime FechaInicio { get; set; }
     public DateTime FechaFin { get; set; }
@@ -27,11 +26,8 @@ public class ReservaClienteDataRequest
 
 public class ReservaHabitacionDataRequest
 {
-    public Guid HabitacionGuid { get; set; }
     public Guid TipoHabitacionGuid { get; set; }
     public int NumHabitaciones { get; set; } = 1;
-    public DateTime? FechaInicio { get; set; }
-    public DateTime? FechaFin { get; set; }
     public int NumAdultos { get; set; } = 1;
     public int NumNinos { get; set; }
     public decimal DescuentoLinea { get; set; }

@@ -5,7 +5,20 @@ C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\Micro
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.AssemblyInfoInputs.cache
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.AssemblyInfo.cs
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.sourcelink.json
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\refint\HotelJJ.Contracts.dll
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.pdb
 C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\ref\HotelJJ.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\bin\Release\net10.0\HotelJJ.Contracts.deps.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\bin\Release\net10.0\HotelJJ.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\bin\Release\net10.0\HotelJJ.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.AssemblyInfoInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.AssemblyInfo.cs
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.sourcelink.json
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\refint\HotelJJ.Contracts.dll
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\HotelJJ.Contracts.pdb
+C:\Users\jorge\OneDrive\Escritorio\Puce\Semestre 6\Integracion de sistemas\MicroFinal - No dockers\Middleware.HotelJJ\HotelJJ.Contracts\obj\Release\net10.0\ref\HotelJJ.Contracts.dll

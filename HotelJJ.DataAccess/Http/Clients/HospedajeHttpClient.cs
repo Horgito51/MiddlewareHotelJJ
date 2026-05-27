@@ -201,7 +201,7 @@ public class HospedajeHttpClient : IHospedajeHttpClient
         throw new DownstreamApiException(
             ServiceName,
             response.StatusCode,
-            $"El microservicio Hospedaje respondio {(int)response.StatusCode} ({response.ReasonPhrase}).",
+            DownstreamErrorMessageExtractor.BuildMessage(ServiceName, response, body),
             body,
             response.RequestMessage?.RequestUri?.PathAndQuery);
     }

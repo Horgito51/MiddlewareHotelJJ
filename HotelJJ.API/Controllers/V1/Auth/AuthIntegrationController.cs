@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using HotelJJ.API.Models.Common;
 using HotelJJ.API.Models.Requests.Auth;
 using HotelJJ.API.Models.Responses.Auth;
 using HotelJJ.Business.DTOs.Auth;
@@ -23,8 +24,8 @@ public class AuthIntegrationController : ControllerBase
 
     [HttpPost("login")]
     [AllowAnonymous]
-    [ProducesResponseType(typeof(LoginIntegrationResponse), StatusCodes.Status200OK)]
-    public async Task<ActionResult<LoginIntegrationResponse>> Login(
+    [ProducesResponseType(typeof(ApiSuccessResponse<LoginIntegrationResponse>), StatusCodes.Status200OK)]
+    public async Task<ActionResult<ApiSuccessResponse<LoginIntegrationResponse>>> Login(
         [FromBody] LoginIntegrationRequest request,
         CancellationToken cancellationToken)
     {
@@ -34,13 +35,13 @@ public class AuthIntegrationController : ControllerBase
             Password = request.Password
         }, cancellationToken);
 
-        return Ok(ToResponse(token));
+        return Ok(new ApiSuccessResponse<LoginIntegrationResponse>(ToResponse(token), "Autenticación exitosa"));
     }
 
     [HttpPost("refresh")]
     [AllowAnonymous]
-    [ProducesResponseType(typeof(LoginIntegrationResponse), StatusCodes.Status200OK)]
-    public async Task<ActionResult<LoginIntegrationResponse>> Refresh(
+    [ProducesResponseType(typeof(ApiSuccessResponse<LoginIntegrationResponse>), StatusCodes.Status200OK)]
+    public async Task<ActionResult<ApiSuccessResponse<LoginIntegrationResponse>>> Refresh(
         [FromBody] RefreshTokenIntegrationRequest request,
         CancellationToken cancellationToken)
     {
@@ -49,13 +50,13 @@ public class AuthIntegrationController : ControllerBase
             RefreshToken = request.RefreshToken
         }, cancellationToken);
 
-        return Ok(ToResponse(token));
+        return Ok(new ApiSuccessResponse<LoginIntegrationResponse>(ToResponse(token), "Token actualizado exitosamente"));
     }
 
     [HttpPost("register-cliente")]
     [AllowAnonymous]
-    [ProducesResponseType(typeof(LoginIntegrationResponse), StatusCodes.Status201Created)]
-    public async Task<ActionResult<LoginIntegrationResponse>> RegisterCliente(
+    [ProducesResponseType(typeof(ApiSuccessResponse<LoginIntegrationResponse>), StatusCodes.Status201Created)]
+    public async Task<ActionResult<ApiSuccessResponse<LoginIntegrationResponse>>> RegisterCliente(
         [FromBody] RegisterClienteIntegrationRequest request,
         CancellationToken cancellationToken)
     {
@@ -65,7 +66,9 @@ public class AuthIntegrationController : ControllerBase
             Password = request.Password
         }, cancellationToken);
 
-        return StatusCode(StatusCodes.Status201Created, ToResponse(token));
+        return StatusCode(
+            StatusCodes.Status201Created,
+            new ApiSuccessResponse<LoginIntegrationResponse>(ToResponse(token), "Registro exitoso"));
     }
 
     [HttpPost("logout")]
@@ -102,16 +105,13 @@ public class AuthIntegrationController : ControllerBase
     {
         return new LoginIntegrationResponse
         {
-            AccessToken = token.AccessToken,
+            Token = token.Token,
             RefreshToken = token.RefreshToken,
-            ExpiresIn = token.ExpiresIn,
-            ExpiresAt = token.ExpiresAt,
-            IdCliente = token.IdCliente,
-            ClienteGuid = token.ClienteGuid,
+            Expiration = token.Expiration,
+            UsuarioId = token.UsuarioId,
             UsuarioGuid = token.UsuarioGuid,
             Username = token.Username,
-            Correo = token.Correo,
-            NombreCompleto = token.NombreCompleto,
+            Email = token.Email,
             Roles = token.Roles
         };
     }

@@ -52,6 +52,12 @@ public static class AlojamientoQueryValidator
     public static void ValidateHabitaciones(Guid sucursalGuid, AlojamientoHabitacionesQueryDTO request)
     {
         ValidateSucursalGuid(sucursalGuid);
+
+        if (request.TipoHabitacionGuid == Guid.Empty)
+        {
+            throw new IntegrationValidationException("MID-ALOJ-015", "tipoHabitacionGuid debe ser un UUID valido cuando se envia.");
+        }
+
         ValidateDatePair(request.FechaInicio, request.FechaFin, "MID-ALOJ-013", "MID-ALOJ-014");
     }
 
@@ -67,12 +73,12 @@ public static class AlojamientoQueryValidator
     {
         if (start.HasValue != end.HasValue)
         {
-            throw new IntegrationValidationException(incompleteCode, "Las fechas de entrada y salida deben enviarse juntas.");
+            throw new IntegrationValidationException(incompleteCode, "fechaInicio y fechaFin deben enviarse juntas.");
         }
 
         if (start.HasValue && end.HasValue && end.Value <= start.Value)
         {
-            throw new IntegrationValidationException(rangeCode, "La fecha de salida debe ser posterior a la fecha de entrada.");
+            throw new IntegrationValidationException(rangeCode, "fechaFin debe ser posterior a fechaInicio.");
         }
     }
 

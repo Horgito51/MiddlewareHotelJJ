@@ -146,21 +146,21 @@ public class HospedajeOrchestrationService : IHospedajeOrchestrationService
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
         {
-            throw new IntegrationNotFoundException("MID-HOS-404", "No se encontro el recurso solicitado en Hospedaje.", ex);
+            throw new IntegrationNotFoundException("MID-HOS-404", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.Unauthorized ||
                                                 ex.StatusCode == HttpStatusCode.Forbidden)
         {
-            throw new IntegrationUnauthorizedException("MID-HOS-401", "Token ausente o no autorizado para operar Hospedaje.", ex);
+            throw new IntegrationUnauthorizedException("MID-HOS-401", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.Conflict)
         {
-            throw new IntegrationConflictException("MID-HOS-409", "Hospedaje rechazo la operacion por conflicto de estado.", ex);
+            throw new IntegrationConflictException("MID-HOS-409", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.BadRequest ||
                                                 ex.StatusCode == HttpStatusCode.UnprocessableEntity)
         {
-            throw new IntegrationValidationException("MID-HOS-400", ex.Message);
+            throw new IntegrationValidationException("MID-HOS-400", ex.Message, ex);
         }
         catch (DownstreamApiException ex)
         {

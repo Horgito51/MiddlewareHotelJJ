@@ -169,7 +169,7 @@ public class FacturacionHttpClient : IFacturacionHttpClient
         throw new DownstreamApiException(
             ServiceName,
             response.StatusCode,
-            $"El microservicio Facturacion respondio {(int)response.StatusCode} ({response.ReasonPhrase}).",
+            DownstreamErrorMessageExtractor.BuildMessage(ServiceName, response, body),
             body,
             response.RequestMessage?.RequestUri?.PathAndQuery);
     }

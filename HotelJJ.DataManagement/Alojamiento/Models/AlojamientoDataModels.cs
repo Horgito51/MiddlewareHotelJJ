@@ -45,6 +45,9 @@ public class AlojamientoRoomTypeDataModel
     public int CapacidadNinos { get; set; }
     public decimal? AreaM2 { get; set; }
     public decimal PrecioBase { get; set; }
+    public decimal PrecioNocheAplicado { get; set; }
+    public Guid? TarifaGuid { get; set; }
+    public string? OrigenPrecio { get; set; }
     public List<string> Imagenes { get; set; } = new();
     public int? DisponiblesEnRango { get; set; }
 }

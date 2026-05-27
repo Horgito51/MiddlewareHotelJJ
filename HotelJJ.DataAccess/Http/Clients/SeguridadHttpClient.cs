@@ -67,7 +67,7 @@ public class SeguridadHttpClient : ISeguridadHttpClient
             throw new DownstreamApiException(
                 ServiceName,
                 response.StatusCode,
-                $"El microservicio Seguridad respondio {(int)response.StatusCode} ({response.ReasonPhrase}).",
+                DownstreamErrorMessageExtractor.BuildMessage(ServiceName, response, body),
                 body,
                 SeguridadRoutes.AuthLogout);
         }
@@ -96,7 +96,7 @@ public class SeguridadHttpClient : ISeguridadHttpClient
             throw new DownstreamApiException(
                 ServiceName,
                 response.StatusCode,
-                $"El microservicio Seguridad respondio {(int)response.StatusCode} ({response.ReasonPhrase}).",
+                DownstreamErrorMessageExtractor.BuildMessage(ServiceName, response, body),
                 body,
                 SeguridadRoutes.AuthCambiarPassword);
         }
@@ -115,7 +115,7 @@ public class SeguridadHttpClient : ISeguridadHttpClient
             throw new DownstreamApiException(
                 ServiceName,
                 response.StatusCode,
-                $"El microservicio Seguridad respondio {(int)response.StatusCode} ({response.ReasonPhrase}).",
+                DownstreamErrorMessageExtractor.BuildMessage(ServiceName, response, body),
                 body,
                 requestUri);
         }
@@ -130,8 +130,8 @@ public class SeguridadHttpClient : ISeguridadHttpClient
                 requestUri);
         }
 
-        var downstreamResponse = JsonSerializer.Deserialize<TResponse>(body, JsonOptions);
-        if (downstreamResponse is null)
+        var wrappedResponse = JsonSerializer.Deserialize<SeguridadApiResponseModel<TResponse>>(body, JsonOptions);
+        if (wrappedResponse is null || wrappedResponse.Data is null)
         {
             throw new DownstreamApiException(
                 ServiceName,
@@ -141,6 +141,6 @@ public class SeguridadHttpClient : ISeguridadHttpClient
                 requestUri);
         }
 
-        return downstreamResponse;
+        return wrappedResponse.Data;
     }
 }

@@ -13,6 +13,11 @@ public interface IReservasDataService
         Guid reservaGuid,
         CancellationToken cancellationToken = default);
 
+    Task<ReservaDataModel> GetByGuidAuthorizedAsync(
+        Guid reservaGuid,
+        string? authorizationHeader,
+        CancellationToken cancellationToken = default);
+
     Task<ReservaHospedajeDataModel> GetInternalForHospedajeAsync(
         Guid reservaGuid,
         string? authorizationHeader,

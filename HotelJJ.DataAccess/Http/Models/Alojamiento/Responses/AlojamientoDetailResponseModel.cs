@@ -20,6 +20,9 @@ public class AlojamientoRoomTypeResponseModel
     public int CapacidadNinos { get; set; }
     public decimal? AreaM2 { get; set; }
     public decimal PrecioBase { get; set; }
+    public decimal PrecioNocheAplicado { get; set; }
+    public Guid? TarifaGuid { get; set; }
+    public string? OrigenPrecio { get; set; }
     public List<string> Imagenes { get; set; } = new();
     public int? DisponiblesEnRango { get; set; }
 }
@@ -47,8 +50,8 @@ public class AlojamientoPolicyResponseModel
 
 public class AlojamientoAvailabilityResponseModel
 {
-    public DateTime FechaEntrada { get; set; }
-    public DateTime FechaSalida { get; set; }
+    public DateTime FechaInicio { get; set; }
+    public DateTime FechaFin { get; set; }
     public List<AlojamientoAvailabilityByRoomTypeResponseModel> PorTipoHabitacion { get; set; } = new();
 }
 

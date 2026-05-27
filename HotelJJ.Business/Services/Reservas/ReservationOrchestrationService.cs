@@ -1,27 +1,21 @@
 using System.Net;
-using HotelJJ.Business.DTOs.Alojamiento;
 using HotelJJ.Business.DTOs.Reservas;
 using HotelJJ.Business.Exceptions;
 using HotelJJ.Business.Interfaces.Reservas;
 using HotelJJ.Business.Mappers.Reservas;
 using HotelJJ.Business.Validators.Reservas;
 using HotelJJ.DataAccess.Http.Common;
-using HotelJJ.DataManagement.Alojamiento.Interfaces;
-using HotelJJ.DataManagement.Alojamiento.Models;
 using HotelJJ.DataManagement.Reservas.Interfaces;
 
 namespace HotelJJ.Business.Services.Reservas;
 
 public class ReservationOrchestrationService : IReservationOrchestrationService
 {
-    private readonly IAlojamientoDataService _alojamientoDataService;
     private readonly IReservasDataService _reservasDataService;
 
     public ReservationOrchestrationService(
-        IAlojamientoDataService alojamientoDataService,
         IReservasDataService reservasDataService)
     {
-        _alojamientoDataService = alojamientoDataService;
         _reservasDataService = reservasDataService;
     }
 
@@ -33,8 +27,6 @@ public class ReservationOrchestrationService : IReservationOrchestrationService
 
         return ExecuteReservasOperationAsync(async () =>
         {
-            await ValidateAccommodationAsync(request, cancellationToken);
-
             var data = await _reservasDataService.CreateAsync(
                 ReservationBusinessMapper.ToDataRequest(request),
                 cancellationToken);
@@ -52,6 +44,24 @@ public class ReservationOrchestrationService : IReservationOrchestrationService
         return ExecuteReservasOperationAsync(async () =>
         {
             var data = await _reservasDataService.GetByGuidAsync(reservaGuid, cancellationToken);
+            return ReservationBusinessMapper.ToDTO(data);
+        });
+    }
+
+    public Task<ReservationDTO> GetByGuidAuthorizedAsync(
+        Guid reservaGuid,
+        string? authorizationHeader,
+        CancellationToken cancellationToken = default)
+    {
+        ReservationValidator.ValidateGet(reservaGuid);
+
+        return ExecuteReservasOperationAsync(async () =>
+        {
+            var data = await _reservasDataService.GetByGuidAuthorizedAsync(
+                reservaGuid,
+                authorizationHeader,
+                cancellationToken);
+
             return ReservationBusinessMapper.ToDTO(data);
         });
     }
@@ -90,33 +100,6 @@ public class ReservationOrchestrationService : IReservationOrchestrationService
         });
     }
 
-    private async Task ValidateAccommodationAsync(
-        ReservationCreateDTO request,
-        CancellationToken cancellationToken)
-    {
-        await _alojamientoDataService.GetDetailAsync(
-            request.SucursalGuid,
-            new AlojamientoDetailDataRequest
-            {
-                FechaEntrada = request.FechaInicio,
-                FechaSalida = request.FechaFin
-            },
-            cancellationToken);
-
-        foreach (var habitacion in request.Habitaciones)
-        {
-            await _alojamientoDataService.GetHabitacionesAsync(
-                request.SucursalGuid,
-                new AlojamientoHabitacionesDataRequest
-                {
-                    TipoHabitacionGuid = habitacion.TipoHabitacionGuid == Guid.Empty ? null : habitacion.TipoHabitacionGuid,
-                    FechaInicio = habitacion.FechaInicio ?? request.FechaInicio,
-                    FechaFin = habitacion.FechaFin ?? request.FechaFin
-                },
-                cancellationToken);
-        }
-    }
-
     private static async Task<T> ExecuteReservasOperationAsync<T>(Func<Task<T>> operation)
     {
         try
@@ -125,16 +108,24 @@ public class ReservationOrchestrationService : IReservationOrchestrationService
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
         {
-            throw new IntegrationNotFoundException("MID-RES-404", "No se encontro el recurso solicitado.", ex);
+            throw new IntegrationNotFoundException("MID-RES-404", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.Conflict)
         {
-            throw new IntegrationConflictException("MID-RES-409", "La reserva no pudo completarse por conflicto de disponibilidad o estado.", ex);
+            throw new IntegrationConflictException("MID-RES-409", ex.Message, ex);
+        }
+        catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.Forbidden)
+        {
+            throw new IntegrationForbiddenException("MID-RES-403", ex.Message, ex);
+        }
+        catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.Unauthorized)
+        {
+            throw new IntegrationUnauthorizedException("MID-RES-401", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.BadRequest ||
                                                 ex.StatusCode == HttpStatusCode.UnprocessableEntity)
         {
-            throw new IntegrationValidationException("MID-RES-400", ex.Message);
+            throw new IntegrationValidationException("MID-RES-400", ex.Message, ex);
         }
         catch (DownstreamApiException ex)
         {

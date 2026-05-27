@@ -9,7 +9,6 @@ public static class ReservationBusinessMapper
     {
         return new ReservaCreateDataRequest
         {
-            ClienteGuid = request.ClienteGuid,
             SucursalGuid = request.SucursalGuid,
             FechaInicio = request.FechaInicio,
             FechaFin = request.FechaFin,
@@ -101,11 +100,8 @@ public static class ReservationBusinessMapper
     {
         return new ReservaHabitacionDataRequest
         {
-            HabitacionGuid = request.HabitacionGuid,
             TipoHabitacionGuid = request.TipoHabitacionGuid,
             NumHabitaciones = request.NumHabitaciones,
-            FechaInicio = request.FechaInicio,
-            FechaFin = request.FechaFin,
             NumAdultos = request.NumAdultos,
             NumNinos = request.NumNinos,
             DescuentoLinea = request.DescuentoLinea

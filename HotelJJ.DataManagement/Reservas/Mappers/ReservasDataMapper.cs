@@ -10,14 +10,12 @@ public static class ReservasDataMapper
     {
         return new CreateReservaRequestModel
         {
-            ClienteGuid = request.ClienteGuid,
             SucursalGuid = request.SucursalGuid,
             FechaInicio = request.FechaInicio,
             FechaFin = request.FechaFin,
-            DescuentoAplicado = request.DescuentoAplicado,
             Observaciones = request.Observaciones,
-            EsWalkin = request.EsWalkin,
             OrigenCanalReserva = request.OrigenCanalReserva,
+            EsWalkin = request.EsWalkin,
             Cliente = request.Cliente is null ? null : ToHttpRequest(request.Cliente),
             Habitaciones = request.Habitaciones.Select(ToHttpRequest).ToList()
         };
@@ -100,14 +98,10 @@ public static class ReservasDataMapper
     {
         return new ReservaHabitacionRequestModel
         {
-            HabitacionGuid = request.HabitacionGuid,
             TipoHabitacionGuid = request.TipoHabitacionGuid,
             NumHabitaciones = request.NumHabitaciones,
-            FechaInicio = request.FechaInicio,
-            FechaFin = request.FechaFin,
             NumAdultos = request.NumAdultos,
-            NumNinos = request.NumNinos,
-            DescuentoLinea = request.DescuentoLinea
+            NumNinos = request.NumNinos
         };
     }
 

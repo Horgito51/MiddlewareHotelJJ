@@ -26,7 +26,7 @@ public class ReservasHttpClient : IReservasHttpClient
         CancellationToken cancellationToken = default)
     {
         return PostAsync<CreateReservaRequestModel, ReservaResponseModel>(
-            ReservasRoutes.AccommodationsReservas,
+            ReservasRoutes.PublicReservas,
             request,
             cancellationToken);
     }
@@ -36,8 +36,28 @@ public class ReservasHttpClient : IReservasHttpClient
         CancellationToken cancellationToken = default)
     {
         return GetAsync<ReservaResponseModel>(
-            string.Format(ReservasRoutes.AccommodationsReservaByGuidTemplate, $"{reservaGuid:D}"),
+            string.Format(ReservasRoutes.PublicReservaByGuidTemplate, $"{reservaGuid:D}"),
             cancellationToken);
+    }
+
+    public async Task<ReservaResponseModel> GetByGuidAuthorizedAsync(
+        Guid reservaGuid,
+        string? authorizationHeader,
+        CancellationToken cancellationToken = default)
+    {
+        var requestUri = string.Format(ReservasRoutes.PublicReservaByGuidTemplate, $"{reservaGuid:D}");
+        using var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
+        ApplyAuthorization(request, authorizationHeader);
+
+        using var response = await _httpClient.SendAsync(request, cancellationToken);
+        var body = await response.Content.ReadAsStringAsync(cancellationToken);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            ThrowDownstream(response, body);
+        }
+
+        return Deserialize<ReservaResponseModel>(response.StatusCode, body);
     }
 
     public async Task<InternalReservaResponseModel> GetInternalByGuidAsync(
@@ -161,7 +181,7 @@ public class ReservasHttpClient : IReservasHttpClient
         throw new DownstreamApiException(
             ServiceName,
             response.StatusCode,
-            $"El microservicio Reservas respondio {(int)response.StatusCode} ({response.ReasonPhrase}).",
+            DownstreamErrorMessageExtractor.BuildMessage(ServiceName, response, body),
             body,
             response.RequestMessage?.RequestUri?.PathAndQuery);
     }

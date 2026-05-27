@@ -1,4 +1,6 @@
 using HotelJJ.DataAccess.Http.Interfaces;
+using HotelJJ.DataAccess.Grpc.Interfaces;
+using HotelJJ.DataAccess.Http.Common;
 using HotelJJ.DataManagement.Alojamiento.Interfaces;
 using HotelJJ.DataManagement.Alojamiento.Mappers;
 using HotelJJ.DataManagement.Alojamiento.Models;
@@ -8,10 +10,14 @@ namespace HotelJJ.DataManagement.Alojamiento.Services;
 public class AlojamientoDataService : IAlojamientoDataService
 {
     private readonly IAlojamientoHttpClient _alojamientoHttpClient;
+    private readonly IAlojamientoGrpcClient _alojamientoGrpcClient;
 
-    public AlojamientoDataService(IAlojamientoHttpClient alojamientoHttpClient)
+    public AlojamientoDataService(
+        IAlojamientoHttpClient alojamientoHttpClient,
+        IAlojamientoGrpcClient alojamientoGrpcClient)
     {
         _alojamientoHttpClient = alojamientoHttpClient;
+        _alojamientoGrpcClient = alojamientoGrpcClient;
     }
 
     public async Task<PagedAlojamientoDataModel<AlojamientoSearchItemDataModel>> SearchAsync(
@@ -56,11 +62,25 @@ public class AlojamientoDataService : IAlojamientoDataService
         AlojamientoHabitacionesDataRequest request,
         CancellationToken cancellationToken = default)
     {
-        var response = await _alojamientoHttpClient.GetHabitacionesAsync(
-            sucursalGuid,
-            AlojamientoDataMapper.ToHttpRequest(request),
-            cancellationToken);
+        try
+        {
+            var response = await _alojamientoGrpcClient.GetHabitacionesAsync(
+                sucursalGuid,
+                request.TipoHabitacionGuid,
+                request.FechaInicio,
+                request.FechaFin,
+                cancellationToken);
 
-        return response.Select(AlojamientoDataMapper.ToDataModel).ToList();
+            return response.Select(AlojamientoDataMapper.ToDataModel).ToList();
+        }
+        catch (DownstreamApiException)
+        {
+            var response = await _alojamientoHttpClient.GetHabitacionesAsync(
+                sucursalGuid,
+                AlojamientoDataMapper.ToHttpRequest(request),
+                cancellationToken);
+
+            return response.Select(AlojamientoDataMapper.ToDataModel).ToList();
+        }
     }
 }

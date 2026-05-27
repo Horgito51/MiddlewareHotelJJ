@@ -96,17 +96,40 @@ public class FacturacionOrchestrationService : IFacturacionOrchestrationService
 
         return ExecuteFacturacionOperationAsync(async () =>
         {
-            var idReserva = await _identifierResolverService.ResolveReservaIdAsync(
+            var factura = await GenerarFacturaReservaAsync(
                 request.ReservaGuid,
                 authorizationHeader,
                 cancellationToken);
 
-            var pago = await _facturacionDataService.SimularPagoAsync(
-                FacturacionBusinessMapper.ToDataRequest(request, idReserva),
+            var transaccionExterna = BuildTransactionReference(request);
+            var pago = await RegistrarPagoAsync(
+                new PagoCreateDTO
+                {
+                    FacturaGuid = factura.FacturaGuid,
+                    Monto = request.Monto,
+                    MetodoPago = "TARJETA",
+                    EsPagoElectronico = true,
+                    ProveedorPasarela = "SIMULADOR",
+                    TransaccionExterna = transaccionExterna,
+                    CodigoAutorizacion = BuildAuthorizationCode(transaccionExterna),
+                    Referencia = request.Referencia,
+                    Moneda = factura.Moneda,
+                    TipoCambio = 1m
+                },
                 authorizationHeader,
                 cancellationToken);
 
-            return FacturacionBusinessMapper.ToDTO(pago);
+            return new PagoSimuladoDTO
+            {
+                CodigoReserva = request.ReservaGuid.ToString(),
+                Monto = pago.Monto,
+                EstadoPago = pago.EstadoPago,
+                EstadoReserva = "PAG",
+                TransaccionExterna = pago.TransaccionExterna ?? string.Empty,
+                CodigoAutorizacion = pago.CodigoAutorizacion ?? string.Empty,
+                Mensaje = "Pago aprobado y registrado contra la factura de la reserva.",
+                FechaPagoUtc = pago.FechaPagoUtc
+            };
         });
     }
 
@@ -159,21 +182,21 @@ public class FacturacionOrchestrationService : IFacturacionOrchestrationService
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
         {
-            throw new IntegrationNotFoundException("MID-FAC-404", "No se encontro el recurso solicitado en Facturacion.", ex);
+            throw new IntegrationNotFoundException("MID-FAC-404", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.Unauthorized ||
                                                 ex.StatusCode == HttpStatusCode.Forbidden)
         {
-            throw new IntegrationUnauthorizedException("MID-FAC-401", "Token ausente o no autorizado para operar Facturacion.", ex);
+            throw new IntegrationUnauthorizedException("MID-FAC-401", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.Conflict)
         {
-            throw new IntegrationConflictException("MID-FAC-409", "Facturacion rechazo la operacion por conflicto de estado.", ex);
+            throw new IntegrationConflictException("MID-FAC-409", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.BadRequest ||
                                                 ex.StatusCode == HttpStatusCode.UnprocessableEntity)
         {
-            throw new IntegrationValidationException("MID-FAC-400", ex.Message);
+            throw new IntegrationValidationException("MID-FAC-400", ex.Message, ex);
         }
         catch (DownstreamApiException ex)
         {
@@ -187,5 +210,21 @@ public class FacturacionOrchestrationService : IFacturacionOrchestrationService
         {
             throw new IntegrationBusinessException("MID-FAC-504", "La solicitud a Facturacion excedio el tiempo de espera.", ex);
         }
+    }
+
+    private static string BuildTransactionReference(PagoSimularDTO request)
+    {
+        var seed = string.IsNullOrWhiteSpace(request.Referencia)
+            ? request.TokenPago
+            : request.Referencia;
+
+        return $"SIM-{request.ReservaGuid:N}-{Math.Abs(seed.GetHashCode()):X}";
+    }
+
+    private static string BuildAuthorizationCode(string transactionReference)
+    {
+        return transactionReference.Length <= 24
+            ? transactionReference
+            : transactionReference[^24..];
     }
 }

@@ -53,14 +53,16 @@ public static class SecurityDataMapper
     {
         return new TokenDataModel
         {
-            AccessToken = response.AccessToken,
+            Token = response.Token,
             RefreshToken = response.RefreshToken,
             ExpiresIn = response.ExpiresIn,
+            Expiration = response.Expiration,
             IdCliente = response.IdCliente,
             ClienteGuid = response.ClienteGuid,
+            UsuarioId = response.UsuarioId,
             UsuarioGuid = response.UsuarioGuid,
             Username = response.Username,
-            Correo = response.Correo,
+            Email = response.Email,
             NombreCompleto = response.NombreCompleto,
             Roles = response.Roles
         };

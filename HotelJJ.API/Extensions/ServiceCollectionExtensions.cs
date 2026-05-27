@@ -12,6 +12,8 @@ using HotelJJ.Business.Services.Facturacion;
 using HotelJJ.Business.Services.Flujos;
 using HotelJJ.Business.Services.Hospedaje;
 using HotelJJ.Business.Services.Reservas;
+using HotelJJ.DataAccess.Grpc.Clients;
+using HotelJJ.DataAccess.Grpc.Interfaces;
 using HotelJJ.DataAccess.Http.Clients;
 using HotelJJ.DataAccess.Http.Interfaces;
 using HotelJJ.DataManagement.Alojamiento.Interfaces;
@@ -25,6 +27,9 @@ using HotelJJ.DataManagement.Hospedaje.Services;
 using HotelJJ.DataManagement.Reservas.Interfaces;
 using HotelJJ.DataManagement.Reservas.Services;
 using HotelJJ.DataManagement.Common.Identifiers;
+using Reservas.Contracts.Grpc.V1;
+using Alojamiento.Contracts.Grpc.V1;
+using Facturacion.Contracts.Grpc.V1;
 
 namespace HotelJJ.API.Extensions;
 
@@ -61,7 +66,7 @@ public static class ServiceCollectionExtensions
             }
 
             client.BaseAddress = new Uri(baseUrl);
-            client.Timeout = TimeSpan.FromSeconds(15);
+            client.Timeout = ResolveTimeout(configuration, "Seguridad");
         });
 
         services.AddHttpClient<IAlojamientoHttpClient, AlojamientoHttpClient>(client =>
@@ -73,7 +78,7 @@ public static class ServiceCollectionExtensions
             }
 
             client.BaseAddress = new Uri(baseUrl);
-            client.Timeout = TimeSpan.FromSeconds(15);
+            client.Timeout = ResolveTimeout(configuration, "Alojamiento");
         });
 
         services.AddHttpClient<IReservasHttpClient, ReservasHttpClient>(client =>
@@ -85,7 +90,7 @@ public static class ServiceCollectionExtensions
             }
 
             client.BaseAddress = new Uri(baseUrl);
-            client.Timeout = TimeSpan.FromSeconds(15);
+            client.Timeout = ResolveTimeout(configuration, "Reservas");
         });
 
         services.AddHttpClient<IHospedajeHttpClient, HospedajeHttpClient>(client =>
@@ -97,7 +102,7 @@ public static class ServiceCollectionExtensions
             }
 
             client.BaseAddress = new Uri(baseUrl);
-            client.Timeout = TimeSpan.FromSeconds(15);
+            client.Timeout = ResolveTimeout(configuration, "Hospedaje");
         });
 
         services.AddHttpClient<IFacturacionHttpClient, FacturacionHttpClient>(client =>
@@ -109,9 +114,57 @@ public static class ServiceCollectionExtensions
             }
 
             client.BaseAddress = new Uri(baseUrl);
-            client.Timeout = TimeSpan.FromSeconds(15);
+            client.Timeout = ResolveTimeout(configuration, "Facturacion");
+        });
+
+        services.AddScoped<IReservasGrpcClient, ReservasGrpcClient>();
+        services.AddScoped<IAlojamientoGrpcClient, AlojamientoGrpcClient>();
+        services.AddScoped<IFacturacionGrpcClient, FacturacionGrpcClient>();
+
+        services.AddGrpcClient<ReservaGrpc.ReservaGrpcClient>(options =>
+        {
+            var grpcUrl = configuration["Microservicios:Reservas:GrpcUrl"]
+                ?? configuration["Microservicios:Reservas:BaseUrl"]
+                ?? throw new InvalidOperationException("Debe configurar Microservicios:Reservas:GrpcUrl o BaseUrl.");
+            options.Address = new Uri(grpcUrl);
+        });
+        services.AddGrpcClient<ClienteGrpc.ClienteGrpcClient>(options =>
+        {
+            var grpcUrl = configuration["Microservicios:Reservas:GrpcUrl"]
+                ?? configuration["Microservicios:Reservas:BaseUrl"]
+                ?? throw new InvalidOperationException("Debe configurar Microservicios:Reservas:GrpcUrl o BaseUrl.");
+            options.Address = new Uri(grpcUrl);
+        });
+
+        services.AddGrpcClient<AlojamientoGrpc.AlojamientoGrpcClient>(options =>
+        {
+            var grpcUrl = configuration["Microservicios:Alojamiento:GrpcUrl"]
+                ?? configuration["Microservicios:Alojamiento:BaseUrl"]
+                ?? throw new InvalidOperationException("Debe configurar Microservicios:Alojamiento:GrpcUrl o BaseUrl.");
+            options.Address = new Uri(grpcUrl);
+        });
+
+        services.AddGrpcClient<FacturacionGrpc.FacturacionGrpcClient>(options =>
+        {
+            var grpcUrl = configuration["Microservicios:Facturacion:GrpcUrl"]
+                ?? configuration["Microservicios:Facturacion:BaseUrl"]
+                ?? throw new InvalidOperationException("Debe configurar Microservicios:Facturacion:GrpcUrl o BaseUrl.");
+            options.Address = new Uri(grpcUrl);
+        });
+        services.AddGrpcClient<PagoGrpc.PagoGrpcClient>(options =>
+        {
+            var grpcUrl = configuration["Microservicios:Facturacion:GrpcUrl"]
+                ?? configuration["Microservicios:Facturacion:BaseUrl"]
+                ?? throw new InvalidOperationException("Debe configurar Microservicios:Facturacion:GrpcUrl o BaseUrl.");
+            options.Address = new Uri(grpcUrl);
         });
 
         return services;
+    }
+
+    private static TimeSpan ResolveTimeout(IConfiguration configuration, string serviceName)
+    {
+        var timeoutSeconds = configuration.GetValue<int?>($"Microservicios:{serviceName}:TimeoutSeconds") ?? 15;
+        return TimeSpan.FromSeconds(timeoutSeconds);
     }
 }

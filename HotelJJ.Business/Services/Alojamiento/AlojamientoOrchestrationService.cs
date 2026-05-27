@@ -96,11 +96,11 @@ public class AlojamientoOrchestrationService : IAlojamientoOrchestrationService
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
         {
-            throw new IntegrationNotFoundException("MID-ALOJ-404", "No se encontro el recurso solicitado en Alojamiento.", ex);
+            throw new IntegrationNotFoundException("MID-ALOJ-404", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode == HttpStatusCode.BadRequest)
         {
-            throw new IntegrationValidationException("MID-ALOJ-400", ex.Message);
+            throw new IntegrationValidationException("MID-ALOJ-400", ex.Message, ex);
         }
         catch (DownstreamApiException ex)
         {

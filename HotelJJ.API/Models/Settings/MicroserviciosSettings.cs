@@ -12,4 +12,6 @@ public class MicroserviciosSettings
 public class MicroservicioEndpointSettings
 {
     public string BaseUrl { get; set; } = string.Empty;
+    public string? GrpcUrl { get; set; }
+    public int TimeoutSeconds { get; set; } = 15;
 }

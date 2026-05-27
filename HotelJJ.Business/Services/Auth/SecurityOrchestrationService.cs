@@ -73,7 +73,7 @@ public class SecurityOrchestrationService : ISecurityOrchestrationService
         }
         catch (DownstreamApiException ex) when (ex.StatusCode is HttpStatusCode.Unauthorized or HttpStatusCode.Forbidden)
         {
-            throw new IntegrationUnauthorizedException("MID-AUTH-005", "Credenciales invalidas.", ex);
+            throw new IntegrationUnauthorizedException("MID-AUTH-005", ex.Message, ex);
         }
         catch (DownstreamApiException ex)
         {
@@ -97,11 +97,11 @@ public class SecurityOrchestrationService : ISecurityOrchestrationService
         }
         catch (DownstreamApiException ex) when (ex.StatusCode is HttpStatusCode.Unauthorized or HttpStatusCode.Forbidden)
         {
-            throw new IntegrationUnauthorizedException("MID-AUTH-019", "No autorizado para ejecutar la operacion de seguridad.", ex);
+            throw new IntegrationUnauthorizedException("MID-AUTH-019", ex.Message, ex);
         }
         catch (DownstreamApiException ex) when (ex.StatusCode is HttpStatusCode.BadRequest or HttpStatusCode.UnprocessableEntity)
         {
-            throw new IntegrationValidationException("MID-AUTH-020", ex.Message);
+            throw new IntegrationValidationException("MID-AUTH-020", ex.Message, ex);
         }
         catch (DownstreamApiException ex)
         {

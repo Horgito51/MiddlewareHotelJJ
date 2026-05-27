@@ -44,7 +44,6 @@ public class AlojamientoDetailResponse : AlojamientoSearchItemResponse
     public List<string> Amenities { get; set; } = new();
     public List<string> Imagenes { get; set; } = new();
     public AlojamientoPolicyResponse Politicas { get; set; } = new();
-    public AlojamientoAvailabilityResponse? Disponibilidad { get; set; }
 }
 
 public class AlojamientoRoomTypeResponse
@@ -83,8 +82,8 @@ public class AlojamientoPolicyResponse
 
 public class AlojamientoAvailabilityResponse
 {
-    public DateTime FechaEntrada { get; set; }
-    public DateTime FechaSalida { get; set; }
+    public DateTime FechaInicio { get; set; }
+    public DateTime FechaFin { get; set; }
     public List<AlojamientoAvailabilityByRoomTypeResponse> PorTipoHabitacion { get; set; } = new();
 }
 

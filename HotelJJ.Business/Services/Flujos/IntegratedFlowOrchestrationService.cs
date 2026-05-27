@@ -183,18 +183,41 @@ public class IntegratedFlowOrchestrationService : IIntegratedFlowOrchestrationSe
 
         if (request.SimularPago)
         {
-            var pagoSimulado = await _facturacionOrchestrationService.SimularPagoAsync(
-                new PagoSimularDTO
+            var facturaSimulada = existingFactura ?? await _facturacionOrchestrationService.GenerarFacturaReservaAsync(
+                reservaGuid,
+                authorizationHeader,
+                cancellationToken);
+
+            var pagoSimuladoRegistrado = await _facturacionOrchestrationService.RegistrarPagoAsync(
+                new PagoCreateDTO
                 {
-                    ReservaGuid = reservaGuid,
+                    FacturaGuid = facturaSimulada.FacturaGuid,
                     Monto = request.Monto,
-                    TokenPago = request.TokenPago ?? string.Empty,
-                    Referencia = request.Referencia
+                    MetodoPago = string.IsNullOrWhiteSpace(request.MetodoPago) ? "TARJETA" : request.MetodoPago,
+                    EsPagoElectronico = true,
+                    ProveedorPasarela = string.IsNullOrWhiteSpace(request.ProveedorPasarela) ? "SIMULADOR" : request.ProveedorPasarela,
+                    TransaccionExterna = request.TransaccionExterna ?? BuildTransactionReference(reservaGuid, request),
+                    CodigoAutorizacion = request.CodigoAutorizacion ?? BuildAuthorizationCode(reservaGuid, request),
+                    Referencia = request.Referencia,
+                    Moneda = request.Moneda,
+                    TipoCambio = request.TipoCambio
                 },
                 authorizationHeader,
                 cancellationToken);
 
-            return new PaymentExecutionResult(existingFactura, null, pagoSimulado);
+            var pagoSimulado = new PagoSimuladoDTO
+            {
+                CodigoReserva = reservaGuid.ToString(),
+                Monto = pagoSimuladoRegistrado.Monto,
+                EstadoPago = pagoSimuladoRegistrado.EstadoPago,
+                EstadoReserva = "PAG",
+                TransaccionExterna = pagoSimuladoRegistrado.TransaccionExterna ?? string.Empty,
+                CodigoAutorizacion = pagoSimuladoRegistrado.CodigoAutorizacion ?? string.Empty,
+                Mensaje = "Pago aprobado y registrado contra la factura de la reserva.",
+                FechaPagoUtc = pagoSimuladoRegistrado.FechaPagoUtc
+            };
+
+            return new PaymentExecutionResult(facturaSimulada, pagoSimuladoRegistrado, pagoSimulado);
         }
 
         var factura = existingFactura;
@@ -267,7 +290,24 @@ public class IntegratedFlowOrchestrationService : IIntegratedFlowOrchestrationSe
                 Referencia = request.Referencia,
                 Moneda = request.Moneda,
                 TipoCambio = request.TipoCambio
-            });
+        });
+    }
+
+    private static string BuildTransactionReference(Guid reservaGuid, IntegratedPaymentDTO request)
+    {
+        var seed = string.IsNullOrWhiteSpace(request.Referencia)
+            ? request.TokenPago ?? reservaGuid.ToString("N")
+            : request.Referencia;
+
+        return $"SIM-{reservaGuid:N}-{Math.Abs(seed.GetHashCode()):X}";
+    }
+
+    private static string BuildAuthorizationCode(Guid reservaGuid, IntegratedPaymentDTO request)
+    {
+        var transactionReference = BuildTransactionReference(reservaGuid, request);
+        return transactionReference.Length <= 24
+            ? transactionReference
+            : transactionReference[^24..];
     }
 
     private sealed record PaymentExecutionResult(

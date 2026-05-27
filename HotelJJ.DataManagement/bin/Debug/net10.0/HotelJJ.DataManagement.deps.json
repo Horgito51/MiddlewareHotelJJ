@@ -16,11 +16,11 @@
           "HotelJJ.DataManagement.dll": {}
         }
       },
-      "Google.Protobuf/3.29.3": {
+      "Google.Protobuf/3.30.2": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
-            "assemblyVersion": "3.29.3.0",
-            "fileVersion": "3.29.3.0"
+            "assemblyVersion": "3.30.2.0",
+            "fileVersion": "3.30.2.0"
           }
         }
       },
@@ -209,6 +209,32 @@
           }
         }
       },
+      "Alojamiento.Contracts/1.0.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.30.2",
+          "Grpc.Core.Api": "2.71.0",
+          "Grpc.Net.Client": "2.71.0"
+        },
+        "runtime": {
+          "Alojamiento.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Facturacion.Contracts/1.0.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.30.2",
+          "Grpc.Core.Api": "2.71.0",
+          "Grpc.Net.Client": "2.71.0"
+        },
+        "runtime": {
+          "Facturacion.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "HotelJJ.Contracts/1.0.0": {
         "runtime": {
           "HotelJJ.Contracts.dll": {
@@ -219,13 +245,30 @@
       },
       "HotelJJ.DataAccess/1.0.0": {
         "dependencies": {
-          "Google.Protobuf": "3.29.3",
+          "Alojamiento.Contracts": "1.0.0",
+          "Facturacion.Contracts": "1.0.0",
+          "Google.Protobuf": "3.30.2",
+          "Grpc.Core.Api": "2.71.0",
           "Grpc.Net.Client": "2.71.0",
           "HotelJJ.Contracts": "1.0.0",
-          "Microsoft.Extensions.Http": "10.0.0"
+          "Microsoft.Extensions.Http": "10.0.0",
+          "Reservas.Contracts": "1.0.0"
         },
         "runtime": {
           "HotelJJ.DataAccess.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Reservas.Contracts/1.0.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.30.2",
+          "Grpc.Core.Api": "2.71.0",
+          "Grpc.Net.Client": "2.71.0"
+        },
+        "runtime": {
+          "Reservas.Contracts.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -239,12 +282,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Google.Protobuf/3.29.3": {
+    "Google.Protobuf/3.30.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-t7nZFFUFwigCwZ+nIXHDLweXvwIpsOXi+P7J7smPT/QjI3EKxnCzTQOhBqyEh6XEzc/pNH+bCFOOSjatrPt6Tw==",
-      "path": "google.protobuf/3.29.3",
-      "hashPath": "google.protobuf.3.29.3.nupkg.sha512"
+      "sha512": "sha512-Y2aOVLIt75yeeEWigg9V9YnjsEm53sADtLGq0gLhwaXpk3iu8tYSoauolyhenagA2sWno2TQ2WujI0HQd6s1Vw==",
+      "path": "google.protobuf/3.30.2",
+      "hashPath": "google.protobuf.3.30.2.nupkg.sha512"
     },
     "Grpc.Core.Api/2.71.0": {
       "type": "package",
@@ -358,12 +401,27 @@
       "path": "microsoft.extensions.primitives/10.0.0",
       "hashPath": "microsoft.extensions.primitives.10.0.0.nupkg.sha512"
     },
+    "Alojamiento.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Facturacion.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "HotelJJ.Contracts/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "HotelJJ.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Reservas.Contracts/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

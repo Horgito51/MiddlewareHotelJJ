@@ -12,6 +12,11 @@ public interface IReservationOrchestrationService
         Guid reservaGuid,
         CancellationToken cancellationToken = default);
 
+    Task<ReservationDTO> GetByGuidAuthorizedAsync(
+        Guid reservaGuid,
+        string? authorizationHeader,
+        CancellationToken cancellationToken = default);
+
     Task<ReservationPriceDTO> CalculatePriceAsync(
         ReservationPriceRequestDTO request,
         CancellationToken cancellationToken = default);

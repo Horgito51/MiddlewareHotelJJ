@@ -179,6 +179,9 @@ public static class AlojamientoDataMapper
             CapacidadNinos = response.CapacidadNinos,
             AreaM2 = response.AreaM2,
             PrecioBase = response.PrecioBase,
+            PrecioNocheAplicado = response.PrecioNocheAplicado > 0 ? response.PrecioNocheAplicado : response.PrecioBase,
+            TarifaGuid = response.TarifaGuid,
+            OrigenPrecio = response.OrigenPrecio,
             Imagenes = response.Imagenes,
             DisponiblesEnRango = response.DisponiblesEnRango
         };
@@ -215,8 +218,8 @@ public static class AlojamientoDataMapper
     {
         return new AlojamientoAvailabilityDataModel
         {
-            FechaEntrada = response.FechaEntrada,
-            FechaSalida = response.FechaSalida,
+            FechaEntrada = response.FechaInicio,
+            FechaSalida = response.FechaFin,
             PorTipoHabitacion = response.PorTipoHabitacion.Select(ToDataModel).ToList()
         };
     }

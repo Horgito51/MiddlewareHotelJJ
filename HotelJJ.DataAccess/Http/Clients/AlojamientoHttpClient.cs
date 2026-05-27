@@ -27,8 +27,8 @@ public class AlojamientoHttpClient : IAlojamientoHttpClient
         var query = new Dictionary<string, string?>
         {
             ["Destino"] = request.Destino,
-            ["FechaEntrada"] = FormatDate(request.FechaEntrada),
-            ["FechaSalida"] = FormatDate(request.FechaSalida),
+            ["fechaInicio"] = FormatDate(request.FechaEntrada),
+            ["fechaFin"] = FormatDate(request.FechaSalida),
             ["NumAdultos"] = FormatNumber(request.NumAdultos),
             ["NumNinos"] = FormatNumber(request.NumNinos),
             ["NumHabitaciones"] = FormatNumber(request.NumHabitaciones),
@@ -53,8 +53,8 @@ public class AlojamientoHttpClient : IAlojamientoHttpClient
     {
         var query = new Dictionary<string, string?>
         {
-            ["fechaEntrada"] = FormatDate(request.FechaEntrada),
-            ["fechaSalida"] = FormatDate(request.FechaSalida)
+            ["fechaInicio"] = FormatDate(request.FechaEntrada),
+            ["fechaFin"] = FormatDate(request.FechaSalida)
         };
 
         return GetAsync<AlojamientoDetailResponseModel>(
@@ -107,7 +107,7 @@ public class AlojamientoHttpClient : IAlojamientoHttpClient
             throw new DownstreamApiException(
                 ServiceName,
                 response.StatusCode,
-                $"El microservicio Alojamiento respondio {(int)response.StatusCode} ({response.ReasonPhrase}).",
+                DownstreamErrorMessageExtractor.BuildMessage(ServiceName, response, body),
                 body,
                 requestUri);
         }

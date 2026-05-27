@@ -14,9 +14,14 @@ public static class ReservationValidator
 
         ValidateDateRange(request.FechaInicio, request.FechaFin);
 
-        if (request.ClienteGuid == Guid.Empty && request.Cliente is null)
+        if (request.DescuentoAplicado < 0)
         {
-            throw new IntegrationValidationException("MID-RES-VAL-002", "Debe enviar clienteGuid o los datos del cliente.");
+            throw new IntegrationValidationException("MID-RES-VAL-013", "descuentoAplicado no puede ser negativo.");
+        }
+
+        if (request.Cliente is null)
+        {
+            throw new IntegrationValidationException("MID-RES-VAL-002", "Debe enviar los datos del cliente.");
         }
 
         if (request.Cliente is not null)
@@ -80,11 +85,11 @@ public static class ReservationValidator
         DateTime reservaInicio,
         DateTime reservaFin)
     {
-        if (habitacion.HabitacionGuid == Guid.Empty && habitacion.TipoHabitacionGuid == Guid.Empty)
+        if (habitacion.TipoHabitacionGuid == Guid.Empty)
         {
             throw new IntegrationValidationException(
                 "MID-RES-VAL-005",
-                "Cada habitacion debe tener habitacionGuid o tipoHabitacionGuid.");
+                "Cada habitacion debe tener tipoHabitacionGuid.");
         }
 
         if (habitacion.NumHabitaciones <= 0)
@@ -102,9 +107,14 @@ public static class ReservationValidator
             throw new IntegrationValidationException("MID-RES-VAL-008", "numNinos no puede ser negativo.");
         }
 
+        if (habitacion.DescuentoLinea < 0)
+        {
+            throw new IntegrationValidationException("MID-RES-VAL-014", "descuentoLinea no puede ser negativo.");
+        }
+
         ValidateDateRange(
-            habitacion.FechaInicio ?? reservaInicio,
-            habitacion.FechaFin ?? reservaFin);
+            reservaInicio,
+            reservaFin);
     }
 
     private static void ValidateDateRange(DateTime fechaInicio, DateTime fechaFin)

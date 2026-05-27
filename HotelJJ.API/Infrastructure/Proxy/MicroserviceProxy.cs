@@ -34,6 +34,11 @@ public class MicroserviceProxy : IMicroserviceProxy
 
         if (HasBody(httpContext.Request.Method))
         {
+            if (httpContext.Request.Body.CanSeek)
+            {
+                httpContext.Request.Body.Position = 0;
+            }
+
             outboundRequest.Content = new StreamContent(httpContext.Request.Body);
             if (!string.IsNullOrWhiteSpace(httpContext.Request.ContentType))
             {

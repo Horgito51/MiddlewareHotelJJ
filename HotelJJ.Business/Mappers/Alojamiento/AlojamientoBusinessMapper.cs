@@ -129,8 +129,7 @@ public static class AlojamientoBusinessMapper
             TarifasActivas = data.TarifasActivas.Select(ToDTO).ToList(),
             Amenities = data.Amenities,
             Imagenes = data.Imagenes,
-            Politicas = ToDTO(data.Politicas),
-            Disponibilidad = data.Disponibilidad is null ? null : ToDTO(data.Disponibilidad)
+            Politicas = ToDTO(data.Politicas)
         };
     }
 
@@ -178,6 +177,9 @@ public static class AlojamientoBusinessMapper
             CapacidadNinos = data.CapacidadNinos,
             AreaM2 = data.AreaM2,
             PrecioBase = data.PrecioBase,
+            PrecioNocheAplicado = data.PrecioNocheAplicado > 0 ? data.PrecioNocheAplicado : data.PrecioBase,
+            TarifaGuid = data.TarifaGuid,
+            OrigenPrecio = data.OrigenPrecio,
             Imagenes = data.Imagenes,
             DisponiblesEnRango = data.DisponiblesEnRango
         };
@@ -210,23 +212,4 @@ public static class AlojamientoBusinessMapper
         };
     }
 
-    private static AlojamientoAvailabilityDTO ToDTO(AlojamientoAvailabilityDataModel data)
-    {
-        return new AlojamientoAvailabilityDTO
-        {
-            FechaEntrada = data.FechaEntrada,
-            FechaSalida = data.FechaSalida,
-            PorTipoHabitacion = data.PorTipoHabitacion.Select(ToDTO).ToList()
-        };
-    }
-
-    private static AlojamientoAvailabilityByRoomTypeDTO ToDTO(AlojamientoAvailabilityByRoomTypeDataModel data)
-    {
-        return new AlojamientoAvailabilityByRoomTypeDTO
-        {
-            TipoHabitacionGuid = data.TipoHabitacionGuid,
-            Nombre = data.Nombre,
-            Disponibles = data.Disponibles
-        };
-    }
 }

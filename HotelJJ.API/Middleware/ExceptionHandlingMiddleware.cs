@@ -38,8 +38,10 @@ public class ExceptionHandlingMiddleware
     {
         var (statusCode, code, message) = exception switch
         {
+            DownstreamApiException ex => (MapDownstreamStatusCode(ex.StatusCode), "MID-DOWNSTREAM", ex.Message),
             IntegrationValidationException ex => (HttpStatusCode.BadRequest, ex.Code, ex.Message),
             IntegrationUnauthorizedException ex => (HttpStatusCode.Unauthorized, ex.Code, ex.Message),
+            IntegrationForbiddenException ex => (HttpStatusCode.Forbidden, ex.Code, ex.Message),
             IntegrationNotFoundException ex => (HttpStatusCode.NotFound, ex.Code, ex.Message),
             IntegrationConflictException ex => (HttpStatusCode.Conflict, ex.Code, ex.Message),
             IntegrationBusinessException ex => (HttpStatusCode.BadGateway, ex.Code, ex.Message),
@@ -91,5 +93,19 @@ public class ExceptionHandlingMiddleware
         }
 
         return exception.InnerException as DownstreamApiException;
+    }
+
+    private static HttpStatusCode MapDownstreamStatusCode(HttpStatusCode statusCode)
+    {
+        return statusCode switch
+        {
+            HttpStatusCode.BadRequest => HttpStatusCode.BadRequest,
+            HttpStatusCode.Unauthorized => HttpStatusCode.Unauthorized,
+            HttpStatusCode.Forbidden => HttpStatusCode.Forbidden,
+            HttpStatusCode.NotFound => HttpStatusCode.NotFound,
+            HttpStatusCode.Conflict => HttpStatusCode.Conflict,
+            HttpStatusCode.UnprocessableEntity => HttpStatusCode.BadRequest,
+            _ => HttpStatusCode.BadGateway
+        };
     }
 }

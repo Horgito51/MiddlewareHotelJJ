@@ -92,11 +92,10 @@ public class IntegratedFlowController : ControllerBase
             PagoInicial = request.PagoInicial is null ? null : ToDTO(request.PagoInicial),
             Reserva = new ReservationCreateDTO
             {
-                ClienteGuid = request.Reserva.ClienteGuid,
                 SucursalGuid = request.Reserva.SucursalGuid,
                 FechaInicio = request.Reserva.FechaInicio,
                 FechaFin = request.Reserva.FechaFin,
-                DescuentoAplicado = request.Reserva.DescuentoAplicado,
+                DescuentoAplicado = 0m,
                 Observaciones = request.Reserva.Observaciones,
                 EsWalkin = request.Reserva.EsWalkin,
                 OrigenCanalReserva = request.Reserva.OrigenCanalReserva,
@@ -111,17 +110,14 @@ public class IntegratedFlowController : ControllerBase
                         Correo = request.Reserva.Cliente.Correo,
                         Telefono = request.Reserva.Cliente.Telefono,
                         Direccion = request.Reserva.Cliente.Direccion
-                    },
+                },
                 Habitaciones = request.Reserva.Habitaciones.Select(h => new ReservationRoomCreateDTO
                 {
-                    HabitacionGuid = h.HabitacionGuid,
                     TipoHabitacionGuid = h.TipoHabitacionGuid,
                     NumHabitaciones = h.NumHabitaciones,
-                    FechaInicio = h.FechaInicio,
-                    FechaFin = h.FechaFin,
                     NumAdultos = h.NumAdultos,
                     NumNinos = h.NumNinos,
-                    DescuentoLinea = h.DescuentoLinea
+                    DescuentoLinea = 0m
                 }).ToList()
             }
         };
