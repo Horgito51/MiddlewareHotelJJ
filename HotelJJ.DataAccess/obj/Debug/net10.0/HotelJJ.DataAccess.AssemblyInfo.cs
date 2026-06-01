@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HotelJJ.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6630d6957a40fca4cfc407e8f0d16550ee99ae45")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf0df3d6cbf7828b79d508046fda6c05cee4e9b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("HotelJJ.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotelJJ.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
