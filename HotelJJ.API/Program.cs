@@ -64,6 +64,12 @@ builder.Services.AddSwaggerGen(options =>
         Version = "v1",
         Description = "Middleware bus para orquestar integraciones entre la aplicacion HotelJJ y los microservicios."
     });
+    options.SwaggerDoc("v2", new OpenApiInfo
+    {
+        Title = "Middleware HotelJJ API",
+        Version = "v2",
+        Description = "Endpoints V2 del middleware para flujos de marketplace, reservas y BFF GraphQL."
+    });
     options.OperationFilter<AccommodationDetailSwaggerCleanupFilter>();
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -92,7 +98,11 @@ app.Logger.LogInformation("Swagger habilitado en /swagger y /swagger/v1/swagger.
 
 // Configure the HTTP request pipeline.
 app.UseSwagger();
-app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Middleware HotelJJ API v1"));
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Middleware HotelJJ API v1");
+    options.SwaggerEndpoint("/swagger/v2/swagger.json", "Middleware HotelJJ API v2");
+});
 
 if (app.Configuration.GetValue("HttpsRedirection:Enabled", !app.Environment.IsDevelopment()))
 {

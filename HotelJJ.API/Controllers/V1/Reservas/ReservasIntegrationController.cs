@@ -11,6 +11,7 @@ namespace HotelJJ.API.Controllers.V1.Reservas;
 
 [ApiController]
 [ApiVersion("1.0")]
+[ApiVersion("2.0")]
 [Authorize]
 [Route("api/v{version:apiVersion}/public/reservas")]
 public class ReservasIntegrationController : ControllerBase
@@ -78,6 +79,7 @@ public class ReservasIntegrationController : ControllerBase
     }
 
     [HttpPatch("{reservaGuid:guid}/cancelar")]
+    [HttpPost("/api/v{version:apiVersion}/accommodations/reservas/{reservaGuid:guid}/cancelar")]
     [AllowAnonymous]
     public async Task<IActionResult> Cancel(
         Guid reservaGuid,

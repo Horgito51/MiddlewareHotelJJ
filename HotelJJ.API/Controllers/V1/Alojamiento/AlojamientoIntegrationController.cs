@@ -10,6 +10,7 @@ namespace HotelJJ.API.Controllers.V1.Alojamiento;
 
 [ApiController]
 [ApiVersion("1.0")]
+[ApiVersion("2.0")]
 [Authorize]
 [Route("api/v{version:apiVersion}/accommodations")]
 public class AlojamientoIntegrationController : ControllerBase

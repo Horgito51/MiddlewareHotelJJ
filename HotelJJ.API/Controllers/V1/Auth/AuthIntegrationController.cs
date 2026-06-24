@@ -6,6 +6,7 @@ using HotelJJ.Business.DTOs.Auth;
 using HotelJJ.Business.Interfaces.Auth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace HotelJJ.API.Controllers.V1.Auth;
 
@@ -16,10 +17,14 @@ namespace HotelJJ.API.Controllers.V1.Auth;
 public class AuthIntegrationController : ControllerBase
 {
     private readonly ISecurityOrchestrationService _securityOrchestrationService;
+    private readonly ILogger<AuthIntegrationController> _logger;
 
-    public AuthIntegrationController(ISecurityOrchestrationService securityOrchestrationService)
+    public AuthIntegrationController(
+        ISecurityOrchestrationService securityOrchestrationService,
+        ILogger<AuthIntegrationController> logger)
     {
         _securityOrchestrationService = securityOrchestrationService;
+        _logger = logger;
     }
 
     [HttpPost("login")]
@@ -29,11 +34,30 @@ public class AuthIntegrationController : ControllerBase
         [FromBody] LoginIntegrationRequest request,
         CancellationToken cancellationToken)
     {
+        _logger.LogWarning("[IAST SIM] Endpoint ejecutado: POST /api/v1/auth/login");
+        _logger.LogWarning("[IAST SIM] Username recibido: {Username}", request.Username);
+        _logger.LogWarning("[IAST SIM] Longitud de password recibido: {PasswordLength}", request.Password?.Length ?? 0);
+
+        if (!string.IsNullOrWhiteSpace(request.Username) &&
+            (
+                request.Username.Contains("'") ||
+                request.Username.Contains("--") ||
+                request.Username.Contains(" OR ", StringComparison.OrdinalIgnoreCase) ||
+                request.Username.Contains("1=1")
+            ))
+        {
+            _logger.LogWarning("[IAST SIM] Posible payload sospechoso detectado en Username: {Username}", request.Username);
+        }
+
+        _logger.LogWarning("[IAST SIM] Enviando credenciales al servicio de autenticación");
+
         var token = await _securityOrchestrationService.LoginAsync(new LoginIntegrationDTO
         {
             Username = request.Username,
             Password = request.Password
         }, cancellationToken);
+
+        _logger.LogWarning("[IAST SIM] Login procesado correctamente para usuario: {Username}", request.Username);
 
         return Ok(new ApiSuccessResponse<LoginIntegrationResponse>(ToResponse(token), "Autenticación exitosa"));
     }
